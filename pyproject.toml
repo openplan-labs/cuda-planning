@@ -54,6 +54,20 @@ path = "cuplan/__init__.py"
 [tool.hatch.build.targets.wheel]
 packages = ["cuplan"]
 
+# An sdist should carry what is needed to build and test the package. The
+# benchmark charts and their raw CSVs are the experiments record, not part
+# of the library: left in, they made an 824 KB sdist against a 60 KB wheel,
+# and the experiment sweep only grows them. `tests/` stays — an sdist whose
+# own test suite cannot run is not much of an sdist.
+[tool.hatch.build.targets.sdist]
+exclude = [
+    ".github/**",
+    "benchmarks/**",
+    "docs/**",
+    "site/**",
+    "mkdocs.yml",
+]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 

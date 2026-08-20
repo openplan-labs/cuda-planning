@@ -1,0 +1,207 @@
+name: Release
+
+# Publishing is driven by a tag: `git tag v0.1.0 && git push origin v0.1.0`.
+# The tag must match `cuplan.__version__`; the build job fails the release if
+# it does not, so a mistyped tag cannot ship a mislabelled artifact.
+#
+# `workflow_dispatch` publishes to TestPyPI instead, for rehearsing a release
+# without burning a version number on the real index.
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Index to publish to"
+        type: choice
+        options: [testpypi, none]
+        default: testpypi
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and check distributions
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: python -m pip install --upgrade build twine
+
+      - name: Build sdist and wheel
+        run: python -m build
+
+      - name: Check the tag matches cuplan.__version__
+        id: version
+        run: |
+          version=$(python -c "import re,pathlib; print(re.search(r'__version__ = \"([^\"]+)\"', pathlib.Path('cuplan/__init__.py').read_text()).group(1))")
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "package version: $version"
+          if [ "${GITHUB_REF_TYPE}" = "tag" ]; then
+            tag_version="${GITHUB_REF_NAME#v}"
+            if [ "$tag_version" != "$version" ]; then
+              echo "::error::tag ${GITHUB_REF_NAME} does not match cuplan.__version__ ($version)"
+              exit 1
+            fi
+          fi
+
+      - name: Check metadata renders on PyPI
+        run: twine check --strict dist/*
+
+      - name: Check the wheel ships the CUDA kernel sources
+        # The kernels are compiled at runtime by NVRTC from these files. A
+        # wheel without them installs cleanly and then fails on first GPU use,
+        # which is exactly the kind of break a release must not ship.
+        run: |
+          python - <<'PY'
+          import glob, sys, zipfile
+          wheel = glob.glob("dist/*.whl")[0]
+          shipped = {n for n in zipfile.ZipFile(wheel).namelist() if n.endswith(".cu")}
+          expected = {
+              "cuplan/kernels/bfs.cu",
+              "cuplan/kernels/flocking.cu",
+              "cuplan/kernels/spacetime.cu",
+              "cuplan/kernels/velocity_obstacles.cu",
+          }
+          if missing := expected - shipped:
+              sys.exit(f"wheel is missing kernel sources: {sorted(missing)}")
+          print(f"wheel ships {len(shipped)} kernel sources")
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  smoke-test:
+    name: Install the wheel (${{ matrix.python-version }})
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install from the built wheel and solve an instance
+        # A GitHub runner has no GPU, so this exercises the CPU reference
+        # backend only — which is the path `pip install cuda-planning` gives
+        # a user without CuPy, and so the one a release must never break.
+        run: |
+          python -m pip install dist/*.whl
+          cd "$(mktemp -d)"  # import the installed package, not the source tree
+          python - <<'PY'
+          import cuplan
+          from cuplan import Agent, Grid, PrioritizedPlanning, Problem
+
+          problem = Problem(
+              Grid.empty(16, 16),
+              [
+                  Agent("a", (0, 0), (15, 15)),
+                  Agent("b", (0, 15), (15, 0)),
+                  Agent("c", (15, 0), (0, 15)),
+              ],
+          )
+          solution = PrioritizedPlanning(backend="cpu").solve(problem)
+          assert solution is not None, "prioritized planning found no solution"
+          assert solution.is_valid(), "solution has conflicts"
+          print(f"cuplan {cuplan.__version__}: sum-of-costs {solution.sum_of_costs}")
+          PY
+
+  publish-pypi:
+    name: Publish to PyPI
+    if: github.event_name == 'push' && github.ref_type == 'tag'
+    needs: [build, smoke-test]
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/cuda-planning/${{ needs.build.outputs.version }}
+    permissions:
+      # Trusted Publishing: PyPI verifies this workflow's OIDC identity, so
+      # the repository stores no API token at all.
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - uses: pypa/gh-action-pypi-publish@release/v1
+
+  publish-testpypi:
+    name: Publish to TestPyPI
+    if: github.event_name == 'workflow_dispatch' && inputs.target == 'testpypi'
+    needs: [build, smoke-test]
+    runs-on: ubuntu-latest
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/project/cuda-planning/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          # A rehearsal must not fail because that version was already
+          # rehearsed.
+          skip-existing: true
+
+  github-release:
+    name: Create the GitHub release
+    if: github.event_name == 'push' && github.ref_type == 'tag'
+    needs: publish-pypi
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Extract this version's changelog section
+        run: |
+          python - <<'PY' > release-notes.md
+          import os, pathlib, re
+          version = os.environ["GITHUB_REF_NAME"].lstrip("v")
+          text = pathlib.Path("CHANGELOG.md").read_text()
+          match = re.search(
+              rf"^## \[{re.escape(version)}\].*?$(.*?)(?=^## \[|\Z)",
+              text,
+              re.MULTILINE | re.DOTALL,
+          )
+          print((match.group(1).strip() if match else f"See CHANGELOG.md for {version}."))
+          print()
+          print(f"Install: `pip install cuda-planning=={version}`")
+          print(f"With CUDA 12: `pip install 'cuda-planning[cuda12]=={version}'`")
+          PY
+
+      - uses: softprops/action-gh-release@v3
+        with:
+          files: dist/*
+          body_path: release-notes.md
+          generate_release_notes: true
