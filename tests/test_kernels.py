@@ -20,17 +20,26 @@ def test_all_kernel_sources_ship():
 
 def test_kernels_compile_with_nvrtc():
     pytest.importorskip("cupy")
-    from cupy.cuda.compiler import compile_using_nvrtc
+    from cupy_backends.cuda.libs import nvrtc
 
+    # NVRTC is called directly (not through cupy.cuda.compiler, which
+    # queries the device for its arch) with an explicit compute_70, so
+    # this compiles on driverless machines — it is what CI runs.
+    try:
+        nvrtc.getVersion()
+    except Exception:  # pragma: no cover - env-dependent
+        pytest.skip("libnvrtc unavailable; pip install 'cupy-cuda12x[ctk]'")
     for name in EXPECTED:
+        program = nvrtc.createProgram(
+            kernel_source(name), f"{name}.cu", [], []
+        )
         try:
-            cubin = compile_using_nvrtc(
-                kernel_source(name), options=("--std=c++11",)
+            nvrtc.compileProgram(
+                program, ["--std=c++11", "-arch=compute_70"]
             )
-        except RuntimeError as error:  # pragma: no cover - env-dependent
-            if "CUDA headers" in str(error):
-                pytest.skip(
-                    "CuPy lacks CUDA headers; pip install 'cupy-cuda12x[ctk]'"
-                )
-            raise
-        assert cubin  # non-empty PTX/cubin
+        except Exception as error:
+            log = nvrtc.getProgramLog(program)
+            raise AssertionError(
+                f"kernel {name!r} failed to compile:\n{log}"
+            ) from error
+        assert nvrtc.getPTX(program)  # non-empty PTX

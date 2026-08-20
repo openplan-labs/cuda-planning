@@ -32,14 +32,12 @@ jobs:
       - name: Run the CPU test suite
         run: pytest -v
 
-  # NVRTC is a pure compiler: with CuPy's pip-shipped CUDA headers the
-  # bundled kernels compile without any GPU device, so a kernel that no
-  # longer parses fails CI even though CI has no GPU. Verified to work
-  # on a driver-only machine; kept non-blocking in case a CuPy release
-  # changes the no-device behaviour.
+  # NVRTC is a pure compiler: with CuPy's pip-shipped CUDA libraries
+  # the bundled kernels compile with no GPU device and no driver (the
+  # test calls libnvrtc directly with an explicit arch), so a kernel
+  # that no longer parses fails CI even though CI has no GPU.
   kernel-compile:
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
