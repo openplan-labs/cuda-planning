@@ -23,7 +23,10 @@ __all__ = ["distance_maps"]
 
 
 def distance_maps(
-    grid: Grid, sources: np.ndarray, backend: Backend = "auto"
+    grid: Grid,
+    sources: np.ndarray,
+    backend: Backend = "auto",
+    timings: dict[str, float] | None = None,
 ) -> np.ndarray:
     """Return exact 4-connected distances from each source to every cell.
 
@@ -32,6 +35,14 @@ def distance_maps(
         sources: ``(n, 2)`` array of ``(row, col)`` source cells. Each
             must be a free cell.
         backend: ``"auto"``, ``"cpu"`` or ``"cuda"``.
+        timings: optional dict the CUDA backend fills with per-phase
+            wall times in seconds — ``h2d`` (upload + device
+            allocation), ``kernel`` (the wave loop, including the
+            per-wave termination check, which is a 4-byte device read),
+            and ``d2h`` (copying the finished maps back). The CPU
+            backend leaves it untouched. Phase boundaries are device
+            synchronization points, so profiling adds a small cost;
+            benchmark totals should come from an unprofiled run.
 
     Returns:
         ``(n, height, width)`` int32 array; entry ``[i, r, c]`` is the
@@ -45,7 +56,7 @@ def distance_maps(
         if not grid.is_free((int(r), int(c))):
             raise ValueError(f"source ({r}, {c}) is blocked or out of bounds")
     if resolve_backend(backend) == "cuda":
-        return _distance_maps_cuda(grid, sources)
+        return _distance_maps_cuda(grid, sources, timings)
     return _distance_maps_cpu(grid, sources)
 
 
@@ -71,11 +82,20 @@ def _distance_maps_cpu(grid: Grid, sources: np.ndarray) -> np.ndarray:
     return dist
 
 
-def _distance_maps_cuda(grid: Grid, sources: np.ndarray) -> np.ndarray:
+def _distance_maps_cuda(
+    grid: Grid, sources: np.ndarray, timings: dict[str, float] | None = None
+) -> np.ndarray:
     """Frontier-parallel BFS on the device: one kernel launch per level."""
+    import time
+
     import cupy
 
     from .kernels import get_kernel
+
+    profile = timings is not None
+    if profile:
+        cupy.cuda.get_current_stream().synchronize()
+        mark = time.perf_counter()
 
     kernel = get_kernel("bfs", "bfs_wave")
     n = len(sources)
@@ -85,6 +105,12 @@ def _distance_maps_cuda(grid: Grid, sources: np.ndarray) -> np.ndarray:
     dist[cupy.arange(n), cupy.asarray(linear)] = 0
     free_mask = cupy.asarray(grid.free.reshape(-1).astype(np.uint8))
     changed = cupy.zeros(1, dtype=cupy.int32)
+
+    if profile:
+        cupy.cuda.get_current_stream().synchronize()
+        now = time.perf_counter()
+        timings["h2d"] = timings.get("h2d", 0.0) + now - mark
+        mark = now
 
     threads = 256
     blocks = min(65535, (n * cells + threads - 1) // threads)
@@ -107,4 +133,16 @@ def _distance_maps_cuda(grid: Grid, sources: np.ndarray) -> np.ndarray:
         )
         if int(changed[0]) == 0:
             break
-    return cupy.asnumpy(dist).reshape(n, grid.height, grid.width)
+
+    if profile:
+        now = time.perf_counter()
+        timings["kernel"] = timings.get("kernel", 0.0) + now - mark
+        mark = now
+
+    result = cupy.asnumpy(dist).reshape(n, grid.height, grid.width)
+
+    if profile:
+        timings["d2h"] = (
+            timings.get("d2h", 0.0) + time.perf_counter() - mark
+        )
+    return result

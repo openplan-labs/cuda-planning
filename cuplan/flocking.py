@@ -88,6 +88,7 @@ class FlockingSim:
         params: FlockingParams | None = None,
         timestep: float = 0.05,
         backend: Backend = "auto",
+        profile: bool = False,
     ):
         self.positions = np.asarray(positions, dtype=np.float64).copy()
         self.velocities = np.asarray(velocities, dtype=np.float64).copy()
@@ -98,6 +99,12 @@ class FlockingSim:
         self.params = params or FlockingParams()
         self.timestep = float(timestep)
         self.backend = backend
+        #: When True and the backend is CUDA, ``run`` reports per-phase
+        #: wall times (``h2d``/``kernel``/``d2h``/``host``, seconds,
+        #: summed over steps) in ``FlockingResult.extra``. Phase
+        #: boundaries are device syncs, so profiled totals run
+        #: slightly slower.
+        self.profile = bool(profile)
 
     def run(self, n_steps: int) -> FlockingResult:
         """Integrate ``n_steps`` and return trajectories plus metrics."""
@@ -107,8 +114,11 @@ class FlockingSim:
         vel = self.velocities.copy()
         p = self.params
 
+        timings: dict[str, float] = {}
         if which == "cuda":
-            forces = self._make_cuda_forces()
+            forces = self._make_cuda_forces(
+                timings if self.profile else None
+            )
         else:
             forces = self._forces_cpu
 
@@ -124,11 +134,17 @@ class FlockingSim:
             history_p.append(pos.copy())
             history_v.append(vel.copy())
 
+        runtime = time.perf_counter() - started
+        extra: dict = {}
+        if timings:
+            device = sum(timings.values())
+            extra = dict(timings, host=max(runtime - device, 0.0))
         return FlockingResult(
             positions=np.stack(history_p),
             velocities=np.stack(history_v),
-            runtime=time.perf_counter() - started,
+            runtime=runtime,
             backend=which,
+            extra=extra,
         )
 
     def _forces_cpu(self, pos: np.ndarray, vel: np.ndarray) -> np.ndarray:
@@ -159,7 +175,7 @@ class FlockingSim:
         command[over] *= p.max_accel / norm[over]
         return command
 
-    def _make_cuda_forces(self):
+    def _make_cuda_forces(self, timings: dict | None = None):
         import cupy
 
         from .kernels import get_kernel
@@ -167,12 +183,24 @@ class FlockingSim:
         kernel = get_kernel("flocking", "boids_forces")
         p = self.params
         dim = self.positions.shape[1]
+        sync = cupy.cuda.get_current_stream().synchronize
+
+        def tick(phase, mark):
+            sync()
+            now = time.perf_counter()
+            timings[phase] = timings.get(phase, 0.0) + now - mark
+            return now
 
         def forces(pos, vel):
             n = len(pos)
+            if timings is not None:
+                sync()
+                mark = time.perf_counter()
             pos_d = cupy.asarray(pos)
             vel_d = cupy.asarray(vel)
             out = cupy.empty((n, dim), dtype=cupy.float64)
+            if timings is not None:
+                mark = tick("h2d", mark)
             threads = 128
             blocks = min(65535, (n + threads - 1) // threads)
             kernel(
@@ -192,6 +220,11 @@ class FlockingSim:
                     np.float64(p.max_accel),
                 ),
             )
-            return cupy.asnumpy(out)
+            if timings is not None:
+                mark = tick("kernel", mark)
+            result = cupy.asnumpy(out)
+            if timings is not None:
+                tick("d2h", mark)
+            return result
 
         return forces

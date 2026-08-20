@@ -86,11 +86,17 @@ class VelocityObstacleSim:
         n_angles: int = 20,
         n_speeds: int = 5,
         backend: Backend = "auto",
+        profile: bool = False,
     ):
         self.timestep = float(timestep)
         self.radius = float(radius)
         self.vmax = float(vmax)
         self.backend = backend
+        #: When True and the backend is CUDA, ``run`` reports per-phase
+        #: wall times (``h2d``/``kernel``/``d2h``/``host``, seconds,
+        #: summed over steps) in ``VOResult.extra``. Phase boundaries
+        #: are device syncs, so profiled totals run slightly slower.
+        self.profile = bool(profile)
         self._starts: list[np.ndarray] = []
         self._goals: list[np.ndarray] = []
         self._obstacles: list[tuple[np.ndarray, np.ndarray]] = []
@@ -133,8 +139,11 @@ class VelocityObstacleSim:
         positions = [pos.copy()]
         velocities = []
 
+        timings: dict[str, float] = {}
         if which == "cuda":
-            step = self._make_cuda_step()
+            step = self._make_cuda_step(
+                timings if self.profile else None
+            )
         else:
             step = self._step_cpu
 
@@ -146,11 +155,17 @@ class VelocityObstacleSim:
             positions.append(pos.copy())
             velocities.append(vel.copy())
 
+        runtime = time.perf_counter() - started
+        extra: dict = {}
+        if timings:
+            device = sum(timings.values())
+            extra = dict(timings, host=max(runtime - device, 0.0))
         return VOResult(
             positions=np.stack(positions),
             velocities=np.stack(velocities),
-            runtime=time.perf_counter() - started,
+            runtime=runtime,
             backend=which,
+            extra=extra,
         )
 
     # -- shared pieces ---------------------------------------------------
@@ -221,7 +236,7 @@ class VelocityObstacleSim:
 
     # -- CUDA backend ----------------------------------------------------
 
-    def _make_cuda_step(self):
+    def _make_cuda_step(self, timings: dict | None = None):
         import cupy
 
         from .kernels import get_kernel
@@ -231,13 +246,26 @@ class VelocityObstacleSim:
         n_samples = len(self._samples)
         radius = self.radius
         samples_h = self._samples
+        sync = cupy.cuda.get_current_stream().synchronize
+
+        def tick(phase, mark):
+            sync()
+            now = time.perf_counter()
+            timings[phase] = timings.get(phase, 0.0) + now - mark
+            return now
 
         def step(pos, vel, desired, others):
             n = len(pos)
+            if timings is not None:
+                sync()
+                mark = time.perf_counter()
             states = cupy.asarray(np.concatenate([pos, vel], axis=1))
             others_d = cupy.asarray(others)
+            desired_d = cupy.asarray(desired)
             self_index = cupy.arange(n, dtype=cupy.int32)
             scores = cupy.empty((n, n_samples), dtype=cupy.float64)
+            if timings is not None:
+                mark = tick("h2d", mark)
             threads = 256
             blocks = min(
                 65535, (n * n_samples + threads - 1) // threads
@@ -247,7 +275,7 @@ class VelocityObstacleSim:
                 (threads,),
                 (
                     states,
-                    cupy.asarray(desired),
+                    desired_d,
                     others_d,
                     self_index,
                     samples_d,
@@ -258,8 +286,14 @@ class VelocityObstacleSim:
                     np.float64(radius),
                 ),
             )
-            best = cupy.asnumpy(cupy.argmin(scores, axis=1))
-            mins = cupy.asnumpy(scores.min(axis=1))
+            best_d = cupy.argmin(scores, axis=1)
+            mins_d = scores.min(axis=1)
+            if timings is not None:
+                mark = tick("kernel", mark)
+            best = cupy.asnumpy(best_d)
+            mins = cupy.asnumpy(mins_d)
+            if timings is not None:
+                tick("d2h", mark)
             chosen = samples_h[best]
             chosen[~np.isfinite(mins)] = 0.0
             return chosen
