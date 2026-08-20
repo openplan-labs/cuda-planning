@@ -7,7 +7,7 @@
 
 [![CI](https://github.com/openplan-labs/cuda-planning/actions/workflows/ci.yml/badge.svg)](https://github.com/openplan-labs/cuda-planning/actions/workflows/ci.yml)
 [![docs](https://github.com/openplan-labs/cuda-planning/actions/workflows/docs.yml/badge.svg)](https://openplan-labs.github.io/cuda-planning/)
-[![PyPI](https://img.shields.io/badge/PyPI-not%20yet%20published-6d8298)](https://openplan-labs.github.io/cuda-planning/install/)
+[![PyPI](https://img.shields.io/pypi/v/cuplan?color=c2472c)](https://pypi.org/project/cuplan/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-6d8298)](LICENSE)
 
 CUDA-accelerated multi-agent path finding (MAPF) and planning — the GPU
@@ -32,8 +32,8 @@ pip install 'cuplan[cuda12]'  # + CUDA, for CUDA 12.x drivers
 pip install 'cuplan[cuda11]'  # + CUDA, for CUDA 11.x drivers
 ```
 
-Not yet on PyPI — until then:
-`pip install git+https://github.com/openplan-labs/cuda-planning`.
+The distribution and the import are both `cuplan`; only the repository
+is called `cuda-planning`.
 If CuPy reports missing CUDA headers on first launch, add them with
 `pip install 'cupy-cuda12x[ctk]'` (pip wheels; no toolkit, no sudo).
 Details in the [install guide](https://openplan-labs.github.io/cuda-planning/install/).

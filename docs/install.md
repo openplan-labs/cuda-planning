@@ -12,8 +12,8 @@ runs in CI.
 
 !!! note
     The distribution and the import are both `cuplan`; only the
-    repository is called `cuda-planning`. The package is prepared for
-    PyPI but not yet published — until it is, install from source:
+    repository is called `cuda-planning`. To track `main` instead of a
+    release, install from source:
     `pip install git+https://github.com/openplan-labs/cuda-planning`.
 
 ## With CUDA

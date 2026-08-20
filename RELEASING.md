@@ -50,30 +50,12 @@ version number can be spent freely.
 1. Update `__version__` in `cuplan/__init__.py`.
 2. Add the version's section to [`CHANGELOG.md`](CHANGELOG.md) — the workflow
    copies it verbatim into the GitHub release notes.
-3. **First release only** — the README currently tells the truth about a
-   package that is not on PyPI yet. Make it tell the truth about one that is:
-
-   - Replace the placeholder badge
-
-     ```
-     [![PyPI](https://img.shields.io/badge/PyPI-not%20yet%20published-6d8298)](https://openplan-labs.github.io/cuda-planning/install/)
-     ```
-
-     with the live one
-
-     ```
-     [![PyPI](https://img.shields.io/pypi/v/cuplan?color=c2472c)](https://pypi.org/project/cuplan/)
-     ```
-
-   - Delete the "Not yet on PyPI — until then: `pip install git+…`" sentence
-     from the install section, and the same caveat in `docs/install.md`.
-
-4. Commit, then tag and push:
+3. Commit, then tag and push:
 
    ```sh
-   git commit -am "Release 0.1.0"
-   git tag v0.1.0
-   git push origin main v0.1.0
+   git commit -am "Release 0.2.0"
+   git tag v0.2.0
+   git push origin main v0.2.0
    ```
 
 The workflow then builds the sdist and wheel, fails if the tag disagrees with
