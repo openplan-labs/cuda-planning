@@ -83,6 +83,20 @@
   box-shadow: none;
 }
 
+/* Theme-correct mark: the accent mark on light paper, the dark-ground
+   mark on slate. An <img> cannot swap per scheme, a background can. */
+.md-header__button.md-logo img {
+  display: none;
+}
+.md-header__button.md-logo {
+  width: 32px;
+  height: 32px;
+  background: url("../assets/mark-accent.svg") no-repeat center / contain;
+}
+:root[data-md-color-scheme="slate"] .md-header__button.md-logo {
+  background-image: url("../assets/mark-dark.svg");
+}
+
 /* Prose is Charter, per the brand type roles; headings stay Libre
    Franklin via Material's font setting. */
 .md-typeset {

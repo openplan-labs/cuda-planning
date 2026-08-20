@@ -9,7 +9,7 @@ from pathlib import Path
 
 from .harness import BenchmarkResult, machine_description
 
-__all__ = ["write_csv", "write_markdown", "write_charts"]
+__all__ = ["read_csv", "write_csv", "write_markdown", "write_charts"]
 
 # Frontier brand: the solver being argued for takes the path accent,
 # supporting series take the agent ramp (brand/figures.md).
@@ -43,6 +43,26 @@ def write_csv(results: list[BenchmarkResult], path: Path) -> None:
             writer.writerow(record.as_dict())
 
 
+def read_csv(path: Path) -> list[BenchmarkResult]:
+    """Load records written by :func:`write_csv`, e.g. to re-render reports."""
+    records = []
+    with path.open() as handle:
+        for row in csv.DictReader(handle):
+            records.append(
+                BenchmarkResult(
+                    family=row["family"],
+                    solver=row["solver"],
+                    size=int(row["size"]),
+                    n_agents=int(row["n_agents"]),
+                    seed=int(row["seed"]),
+                    success=row["success"] == "True",
+                    runtime=float(row["runtime"]),
+                    cost=int(float(row["cost"])) if row["cost"] else None,
+                )
+            )
+    return records
+
+
 def _aggregate(
     results: list[BenchmarkResult],
 ) -> dict[tuple[str, str, int, int], dict]:
@@ -53,17 +73,14 @@ def _aggregate(
     out = {}
     for key, rows in groups.items():
         solved = [r for r in rows if r.success]
+        costs = [r.cost for r in solved if r.cost is not None]
         out[key] = {
             "runs": len(rows),
             "success_rate": len(solved) / len(rows),
             "median_runtime": (
                 statistics.median(r.runtime for r in solved) if solved else None
             ),
-            "median_cost": (
-                statistics.median(r.cost for r in solved if r.cost is not None)
-                if solved
-                else None
-            ),
+            "median_cost": statistics.median(costs) if costs else None,
         }
     return out
 

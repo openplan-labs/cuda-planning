@@ -9,7 +9,7 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
-  logo: assets/mark-dark.svg
+  logo: assets/mark-accent.svg
   favicon: assets/favicon.svg
   palette:
     - media: "(prefers-color-scheme: light)"
