@@ -64,5 +64,14 @@ nav:
       - Velocity obstacles: algorithms/velocity-obstacles.md
       - Flocking: algorithms/flocking.md
   - Benchmarks: benchmarks.md
+  - Experiments:
+      - Methodology: experiments/methodology.md
+      - Prioritized planning: experiments/prioritized.md
+      - PIBT: experiments/pibt.md
+      - Batched BFS: experiments/bfs.md
+      - Velocity obstacles: experiments/velocity-obstacles.md
+      - Flocking: experiments/flocking.md
+      - Phases and crossover: experiments/phases.md
+      - Summary: experiments/summary.md
   - API reference: api.md
   - Roadmap: roadmap.md

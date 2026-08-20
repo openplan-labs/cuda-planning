@@ -136,3 +136,15 @@
 .md-typeset pre > code {
   background-color: var(--md-code-bg-color);
 }
+
+/* Light/dark chart variants: Experiments figures are rendered twice
+   (frontier light tokens and dark tokens) and swapped by URL fragment,
+   the Material light/dark-image pattern. */
+[data-md-color-scheme="default"] img[src$="#only-dark"],
+[data-md-color-scheme="default"] img[src*="#only-dark"] {
+  display: none;
+}
+[data-md-color-scheme="slate"] img[src$="#only-light"],
+[data-md-color-scheme="slate"] img[src*="#only-light"] {
+  display: none;
+}
