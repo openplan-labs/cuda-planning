@@ -1,0 +1,748 @@
+family,solver,size,n_agents,density,seed,status,runtime,cost,makespan,extra
+prioritized,cuplan-cpu,32,8,0.05,0,solved,0.013267655998788541,171,34,{}
+prioritized,cuplan-cuda,32,8,0.05,0,solved,0.013348873999348143,171,34,{}
+prioritized,pymapf,32,8,0.05,0,solved,0.022712718997354386,165,34,{}
+pibt,cuplan-cpu,32,8,0.05,0,solved,0.0046753879978496116,171,34,{}
+pibt,cuplan-cuda,32,8,0.05,0,solved,0.004880853000940988,171,34,{}
+pibt,pymapf,32,8,0.05,0,solved,0.022062672000174643,173,34,{}
+prioritized,cuplan-cpu,32,8,0.05,1,solved,0.014359080003487179,174,34,{}
+prioritized,cuplan-cuda,32,8,0.05,1,solved,0.013047237000137102,174,34,{}
+prioritized,pymapf,32,8,0.05,1,solved,0.04511609600012889,197,34,{}
+pibt,cuplan-cpu,32,8,0.05,1,solved,0.004732282002805732,174,34,{}
+pibt,cuplan-cuda,32,8,0.05,1,solved,0.005020249998779036,174,34,{}
+pibt,pymapf,32,8,0.05,1,solved,0.02176847699956852,174,34,{}
+prioritized,cuplan-cpu,32,8,0.05,2,solved,0.013949370000773342,169,40,{}
+prioritized,cuplan-cuda,32,8,0.05,2,solved,0.013203067999711493,169,40,{}
+prioritized,pymapf,32,8,0.05,2,solved,0.015592276999086607,169,40,{}
+pibt,cuplan-cpu,32,8,0.05,2,solved,0.0054268099993350916,180,41,{}
+pibt,cuplan-cuda,32,8,0.05,2,solved,0.005643824999424396,180,41,{}
+pibt,pymapf,32,8,0.05,2,solved,0.02264364200163982,178,40,{}
+prioritized,cuplan-cpu,32,16,0.05,0,solved,0.025939250997907948,306,31,{}
+prioritized,cuplan-cuda,32,16,0.05,0,solved,0.022644423002930125,306,31,{}
+prioritized,pymapf,32,16,0.05,0,solved,0.05193938700176659,305,31,{}
+pibt,cuplan-cpu,32,16,0.05,0,solved,0.006188900999404723,309,31,{}
+pibt,cuplan-cuda,32,16,0.05,0,solved,0.005805838998639956,309,31,{}
+pibt,pymapf,32,16,0.05,0,solved,0.044324172999040456,308,31,{}
+prioritized,cuplan-cpu,32,16,0.05,1,solved,0.025287300002673874,299,42,{}
+prioritized,cuplan-cuda,32,16,0.05,1,solved,0.021168860999750905,299,42,{}
+prioritized,pymapf,32,16,0.05,1,solved,0.05379043300126796,300,42,{}
+pibt,cuplan-cpu,32,16,0.05,1,solved,0.007210682000732049,307,42,{}
+pibt,cuplan-cuda,32,16,0.05,1,solved,0.006825417000072775,307,42,{}
+pibt,pymapf,32,16,0.05,1,solved,0.04458365099708317,311,42,{}
+prioritized,cuplan-cpu,32,16,0.05,2,solved,0.022563988000911195,280,37,{}
+prioritized,cuplan-cuda,32,16,0.05,2,solved,0.02050008600053843,280,37,{}
+prioritized,pymapf,32,16,0.05,2,solved,0.058460133001062786,288,37,{}
+pibt,cuplan-cpu,32,16,0.05,2,solved,0.0067565070021373685,301,37,{}
+pibt,cuplan-cuda,32,16,0.05,2,solved,0.006494992998341331,301,37,{}
+pibt,pymapf,32,16,0.05,2,solved,0.04486371700113523,284,37,{}
+prioritized,cuplan-cpu,32,32,0.05,0,solved,0.05579419799687457,707,41,{}
+prioritized,cuplan-cuda,32,32,0.05,0,solved,0.04236430400123936,707,41,{}
+prioritized,pymapf,32,32,0.05,0,solved,0.26077588299813215,689,41,{}
+pibt,cuplan-cpu,32,32,0.05,0,solved,0.010742923001089366,789,41,{}
+pibt,cuplan-cuda,32,32,0.05,0,solved,0.008771325999987312,789,41,{}
+pibt,pymapf,32,32,0.05,0,solved,0.08915033299854258,761,43,{}
+prioritized,cuplan-cpu,32,32,0.05,1,solved,0.06591774599655764,871,47,{}
+prioritized,cuplan-cuda,32,32,0.05,1,solved,0.04815006799981347,871,47,{}
+prioritized,pymapf,32,32,0.05,1,solved,0.3117611939997005,859,47,{}
+pibt,cuplan-cpu,32,32,0.05,1,solved,0.011367650997271994,896,47,{}
+pibt,cuplan-cuda,32,32,0.05,1,solved,0.009574455001711613,896,47,{}
+pibt,pymapf,32,32,0.05,1,solved,0.08948995500031742,931,47,{}
+prioritized,cuplan-cpu,32,32,0.05,2,solved,0.056084078998537734,725,43,{}
+prioritized,cuplan-cuda,32,32,0.05,2,solved,0.04482038100104546,725,43,{}
+prioritized,pymapf,32,32,0.05,2,solved,0.2845217659996706,734,43,{}
+pibt,cuplan-cpu,32,32,0.05,2,unsolved,0.12488722199850599,,,{}
+pibt,cuplan-cuda,32,32,0.05,2,unsolved,0.12200396099797217,,,{}
+pibt,pymapf,32,32,0.05,2,unsolved,0.27765336300217314,,,{}
+prioritized,cuplan-cpu,32,64,0.05,0,solved,0.11884916000053636,1547,47,{}
+prioritized,cuplan-cuda,32,64,0.05,0,solved,0.0842280809993099,1547,47,{}
+prioritized,pymapf,32,64,0.05,0,solved,1.9886601500002143,1554,47,{}
+pibt,cuplan-cpu,32,64,0.05,0,solved,0.019090273999609053,1646,47,{}
+pibt,cuplan-cuda,32,64,0.05,0,solved,0.013761317000898998,1646,47,{}
+pibt,pymapf,32,64,0.05,0,solved,0.178490968002734,1653,47,{}
+prioritized,cuplan-cpu,32,64,0.05,1,solved,0.10927058200104511,1407,54,{}
+prioritized,cuplan-cuda,32,64,0.05,1,solved,0.0803734280016215,1407,54,{}
+prioritized,pymapf,32,64,0.05,1,solved,1.8053664379986003,1397,54,{}
+pibt,cuplan-cpu,32,64,0.05,1,solved,0.02062509299867088,1563,54,{}
+pibt,cuplan-cuda,32,64,0.05,1,solved,0.015264305999153294,1563,54,{}
+pibt,pymapf,32,64,0.05,1,solved,0.1809212589978415,1634,54,{}
+prioritized,cuplan-cpu,32,64,0.05,2,solved,0.1222094479999214,1579,46,{}
+prioritized,cuplan-cuda,32,64,0.05,2,solved,0.08867675800138386,1579,46,{}
+prioritized,pymapf,32,64,0.05,2,solved,2.5170433960010996,1542,46,{}
+pibt,cuplan-cpu,32,64,0.05,2,unsolved,0.2062851939990651,,,{}
+pibt,cuplan-cuda,32,64,0.05,2,unsolved,0.20287806199849,,,{}
+pibt,pymapf,32,64,0.05,2,unsolved,0.6551235179977084,,,{}
+prioritized,cuplan-cpu,32,128,0.05,0,solved,0.27271447200109833,3182,50,{}
+prioritized,cuplan-cuda,32,128,0.05,0,solved,0.1841459869974642,3182,50,{}
+prioritized,pymapf,32,128,0.05,0,solved,17.624297757000022,3236,50,{}
+pibt,cuplan-cpu,32,128,0.05,0,solved,0.037617210000462364,3773,50,{}
+pibt,cuplan-cuda,32,128,0.05,0,solved,0.07655770299970754,3773,50,{}
+pibt,pymapf,32,128,0.05,0,solved,0.38169679199927486,3628,51,{}
+prioritized,cuplan-cpu,32,128,0.05,1,solved,0.26910348100136616,3167,52,{}
+prioritized,cuplan-cuda,32,128,0.05,1,solved,0.18444426800124347,3167,52,{}
+prioritized,pymapf,32,128,0.05,1,solved,18.774139323999407,3241,52,{}
+pibt,cuplan-cpu,32,128,0.05,1,solved,0.040576824998424854,3841,54,{}
+pibt,cuplan-cuda,32,128,0.05,1,solved,0.039258450000488665,3841,54,{}
+pibt,pymapf,32,128,0.05,1,solved,0.4247409929994319,3822,55,{}
+prioritized,cuplan-cpu,32,128,0.05,2,solved,0.2667639680003049,3225,53,{}
+prioritized,cuplan-cuda,32,128,0.05,2,solved,0.18725041399738984,3225,53,{}
+prioritized,pymapf,32,128,0.05,2,solved,17.403989212998567,3268,54,{}
+pibt,cuplan-cpu,32,128,0.05,2,solved,0.038362024002708495,3798,53,{}
+pibt,cuplan-cuda,32,128,0.05,2,solved,0.04155130700019072,3798,53,{}
+pibt,pymapf,32,128,0.05,2,solved,0.37925393999830703,3840,53,{}
+prioritized,cuplan-cpu,32,8,0.15,0,solved,0.014888367000821745,173,28,{}
+prioritized,cuplan-cuda,32,8,0.15,0,solved,0.014143280001007952,173,28,{}
+prioritized,pymapf,32,8,0.15,0,solved,0.023863933001848636,173,28,{}
+pibt,cuplan-cpu,32,8,0.15,0,solved,0.004285937000531703,173,28,{}
+pibt,cuplan-cuda,32,8,0.15,0,solved,0.004649326001526788,173,28,{}
+pibt,pymapf,32,8,0.15,0,solved,0.019786273998761317,174,28,{}
+prioritized,cuplan-cpu,32,8,0.15,1,solved,0.013323844999831636,149,35,{}
+prioritized,cuplan-cuda,32,8,0.15,1,solved,0.013056863001111196,149,35,{}
+prioritized,pymapf,32,8,0.15,1,solved,0.013534032001189189,149,35,{}
+pibt,cuplan-cpu,32,8,0.15,1,solved,0.005012169000110589,149,35,{}
+pibt,cuplan-cuda,32,8,0.15,1,solved,0.005331978998583509,149,35,{}
+pibt,pymapf,32,8,0.15,1,solved,0.02731281800151919,149,35,{}
+prioritized,cuplan-cpu,32,8,0.15,2,solved,0.012285308999707922,119,28,{}
+prioritized,cuplan-cuda,32,8,0.15,2,solved,0.011772277001000475,119,28,{}
+prioritized,pymapf,32,8,0.15,2,solved,0.01075065399709274,119,28,{}
+pibt,cuplan-cpu,32,8,0.15,2,solved,0.004280914999981178,122,28,{}
+pibt,cuplan-cuda,32,8,0.15,2,solved,0.004667550001613563,122,28,{}
+pibt,pymapf,32,8,0.15,2,solved,0.01943860099709127,119,28,{}
+prioritized,cuplan-cpu,32,16,0.15,0,solved,0.030311763999634422,366,35,{}
+prioritized,cuplan-cuda,32,16,0.15,0,solved,0.02456861199971172,366,35,{}
+prioritized,pymapf,32,16,0.15,0,solved,0.05124077900109114,343,35,{}
+pibt,cuplan-cpu,32,16,0.15,0,solved,0.006332903998554684,352,35,{}
+pibt,cuplan-cuda,32,16,0.15,0,solved,0.00618298799963668,352,35,{}
+pibt,pymapf,32,16,0.15,0,solved,0.03990660999988904,366,35,{}
+prioritized,cuplan-cpu,32,16,0.15,1,solved,0.024402998002187815,286,33,{}
+prioritized,cuplan-cuda,32,16,0.15,1,solved,0.021806573997309897,286,33,{}
+prioritized,pymapf,32,16,0.15,1,solved,0.048778972999571124,285,33,{}
+pibt,cuplan-cpu,32,16,0.15,1,solved,0.006428511998819886,297,33,{}
+pibt,cuplan-cuda,32,16,0.15,1,solved,0.005945861998043256,297,33,{}
+pibt,pymapf,32,16,0.15,1,solved,0.0394441860007646,300,33,{}
+prioritized,cuplan-cpu,32,16,0.15,2,solved,0.027131132999784313,324,36,{}
+prioritized,cuplan-cuda,32,16,0.15,2,solved,0.02311855299922172,324,36,{}
+prioritized,pymapf,32,16,0.15,2,solved,0.05366007500197156,301,36,{}
+pibt,cuplan-cpu,32,16,0.15,2,solved,0.006614990998059511,326,36,{}
+pibt,cuplan-cuda,32,16,0.15,2,solved,0.006210759998793947,326,36,{}
+pibt,pymapf,32,16,0.15,2,solved,0.04033830700063845,338,40,{}
+prioritized,cuplan-cpu,32,32,0.15,0,solved,0.05258813899854431,640,38,{}
+prioritized,cuplan-cuda,32,32,0.15,0,solved,0.0423206970008323,640,38,{}
+prioritized,pymapf,32,32,0.15,0,solved,0.2855739100014034,673,38,{}
+pibt,cuplan-cpu,32,32,0.15,0,solved,0.010427913002786227,693,38,{}
+pibt,cuplan-cuda,32,32,0.15,0,solved,0.008583634000387974,693,38,{}
+pibt,pymapf,32,32,0.15,0,solved,0.08125416800248786,723,38,{}
+prioritized,cuplan-cpu,32,32,0.15,1,solved,0.06261135800014017,774,41,{}
+prioritized,cuplan-cuda,32,32,0.15,1,solved,0.047287572000641376,774,41,{}
+prioritized,pymapf,32,32,0.15,1,solved,0.28779735900025116,784,41,{}
+pibt,cuplan-cpu,32,32,0.15,1,solved,0.01081088700084365,849,41,{}
+pibt,cuplan-cuda,32,32,0.15,1,solved,0.009088007998798275,849,41,{}
+pibt,pymapf,32,32,0.15,1,solved,0.08194587300022249,817,41,{}
+prioritized,cuplan-cpu,32,32,0.15,2,solved,0.060131446000013966,718,44,{}
+prioritized,cuplan-cuda,32,32,0.15,2,solved,0.04618147300061537,718,44,{}
+prioritized,pymapf,32,32,0.15,2,solved,0.2940739059995394,727,44,{}
+pibt,cuplan-cpu,32,32,0.15,2,solved,0.011594440999033395,764,43,{}
+pibt,cuplan-cuda,32,32,0.15,2,solved,0.00972230099796434,764,43,{}
+pibt,pymapf,32,32,0.15,2,solved,0.08296128599977237,757,43,{}
+prioritized,cuplan-cpu,32,64,0.15,0,solved,0.13478088100237073,1539,52,{}
+prioritized,cuplan-cuda,32,64,0.15,0,solved,0.08957736900265445,1539,52,{}
+prioritized,pymapf,32,64,0.15,0,solved,2.000735834000807,1597,52,{}
+pibt,cuplan-cpu,32,64,0.15,0,solved,0.02083500699882279,1773,50,{}
+pibt,cuplan-cuda,32,64,0.15,0,solved,0.014709650997247081,1773,50,{}
+pibt,pymapf,32,64,0.15,0,solved,0.16522906700265594,1720,48,{}
+prioritized,cuplan-cpu,32,64,0.15,1,solved,0.13321202999941306,1642,45,{}
+prioritized,cuplan-cuda,32,64,0.15,1,solved,0.09211905299889622,1642,45,{}
+prioritized,pymapf,32,64,0.15,1,solved,1.8198386919975746,1549,45,{}
+pibt,cuplan-cpu,32,64,0.15,1,solved,0.01975517599930754,1673,45,{}
+pibt,cuplan-cuda,32,64,0.15,1,solved,0.013816989998304052,1673,45,{}
+pibt,pymapf,32,64,0.15,1,solved,0.16270237199933035,1681,45,{}
+prioritized,cuplan-cpu,32,64,0.15,2,solved,0.1290938610000012,1608,42,{}
+prioritized,cuplan-cuda,32,64,0.15,2,solved,0.09097491099964827,1608,42,{}
+prioritized,pymapf,32,64,0.15,2,solved,1.9869112950000272,1566,43,{}
+pibt,cuplan-cpu,32,64,0.15,2,solved,0.02111781599887763,1684,43,{}
+pibt,cuplan-cuda,32,64,0.15,2,solved,0.013585577999037923,1684,43,{}
+pibt,pymapf,32,64,0.15,2,solved,0.1635629250013153,1758,45,{}
+prioritized,cuplan-cpu,32,128,0.15,0,unsolved,0.22627877199920476,,,{}
+prioritized,cuplan-cuda,32,128,0.15,0,unsolved,0.15344146999996156,,,{}
+prioritized,pymapf,32,128,0.15,0,unsolved,40.15765286500027,,,{}
+pibt,cuplan-cpu,32,128,0.15,0,unsolved,0.40434244700009003,,,{}
+pibt,cuplan-cuda,32,128,0.15,0,unsolved,0.39855489199908334,,,{}
+pibt,pymapf,32,128,0.15,0,solved,0.3336776199976157,3850,52,{}
+prioritized,cuplan-cpu,32,128,0.15,1,solved,0.2812131099999533,3411,57,{}
+prioritized,cuplan-cuda,32,128,0.15,1,solved,0.1870979859995714,3411,57,{}
+prioritized,pymapf,32,128,0.15,1,solved,17.32884492699668,3326,57,{}
+pibt,cuplan-cpu,32,128,0.15,1,solved,0.040646795998327434,4030,58,{}
+pibt,cuplan-cuda,32,128,0.15,1,solved,0.04297000999940792,4030,58,{}
+pibt,pymapf,32,128,0.15,1,solved,0.3389805980004894,4051,66,{}
+prioritized,cuplan-cpu,32,128,0.15,2,solved,0.2642198459980136,3126,50,{}
+prioritized,cuplan-cuda,32,128,0.15,2,solved,0.17819579300339683,3126,50,{}
+prioritized,pymapf,32,128,0.15,2,solved,14.383457459000056,3108,48,{}
+pibt,cuplan-cpu,32,128,0.15,2,solved,0.04183478799677687,3950,70,{}
+pibt,cuplan-cuda,32,128,0.15,2,solved,0.030433385996730067,3950,70,{}
+pibt,pymapf,32,128,0.15,2,solved,0.3094900299984147,3929,61,{}
+prioritized,cuplan-cpu,32,8,0.25,0,solved,0.011178978998941602,138,34,{}
+prioritized,cuplan-cuda,32,8,0.25,0,solved,0.011604277999140322,138,34,{}
+prioritized,pymapf,32,8,0.25,0,solved,0.013726310000492958,138,34,{}
+pibt,cuplan-cpu,32,8,0.25,0,solved,0.004788804999407148,138,34,{}
+pibt,cuplan-cuda,32,8,0.25,0,solved,0.004870953001955058,138,34,{}
+pibt,pymapf,32,8,0.25,0,solved,0.01535932499973569,138,34,{}
+prioritized,cuplan-cpu,32,8,0.25,1,solved,0.015065586998389335,194,41,{}
+prioritized,cuplan-cuda,32,8,0.25,1,solved,0.013121552001393866,194,41,{}
+prioritized,pymapf,32,8,0.25,1,solved,0.01323382700138609,194,41,{}
+pibt,cuplan-cpu,32,8,0.25,1,solved,0.004883747002168093,194,41,{}
+pibt,cuplan-cuda,32,8,0.25,1,solved,0.005059355997218518,194,41,{}
+pibt,pymapf,32,8,0.25,1,solved,0.015842945998883806,195,41,{}
+prioritized,cuplan-cpu,32,8,0.25,2,solved,0.01264271099717007,154,34,{}
+prioritized,cuplan-cuda,32,8,0.25,2,solved,0.011544640001375228,154,34,{}
+prioritized,pymapf,32,8,0.25,2,solved,0.010785724000015762,154,34,{}
+pibt,cuplan-cpu,32,8,0.25,2,solved,0.004420929999469081,157,34,{}
+pibt,cuplan-cuda,32,8,0.25,2,solved,0.0046412999981839675,157,34,{}
+pibt,pymapf,32,8,0.25,2,solved,0.015200914000160992,157,34,{}
+prioritized,cuplan-cpu,32,16,0.25,0,solved,0.03138043000217294,409,43,{}
+prioritized,cuplan-cuda,32,16,0.25,0,solved,0.024306035000336124,409,43,{}
+prioritized,pymapf,32,16,0.25,0,solved,0.09551460000147927,411,43,{}
+pibt,cuplan-cpu,32,16,0.25,0,solved,0.006950078997761011,448,43,{}
+pibt,cuplan-cuda,32,16,0.25,0,solved,0.0065373020006518345,448,43,{}
+pibt,pymapf,32,16,0.25,0,solved,0.031791144003364025,438,43,{}
+prioritized,cuplan-cpu,32,16,0.25,1,solved,0.025364815999637358,332,35,{}
+prioritized,cuplan-cuda,32,16,0.25,1,solved,0.021484480999788502,332,35,{}
+prioritized,pymapf,32,16,0.25,1,solved,0.04602154900203459,331,35,{}
+pibt,cuplan-cpu,32,16,0.25,1,solved,0.006462375000410248,375,41,{}
+pibt,cuplan-cuda,32,16,0.25,1,solved,0.006031793000147445,375,41,{}
+pibt,pymapf,32,16,0.25,1,solved,0.03097239599810564,333,35,{}
+prioritized,cuplan-cpu,32,16,0.25,2,unsolved,0.018996328002685914,,,{}
+prioritized,cuplan-cuda,32,16,0.25,2,unsolved,0.013823323999531567,,,{}
+prioritized,pymapf,32,16,0.25,2,unsolved,5.60241930200209,,,{}
+pibt,cuplan-cpu,32,16,0.25,2,unsolved,0.06925545999911265,,,{}
+pibt,cuplan-cuda,32,16,0.25,2,unsolved,0.06846017899806611,,,{}
+pibt,pymapf,32,16,0.25,2,unsolved,0.09891842299839482,,,{}
+prioritized,cuplan-cpu,32,32,0.25,0,solved,0.05959990599876619,785,45,{}
+prioritized,cuplan-cuda,32,32,0.25,0,solved,0.044855326999822864,785,45,{}
+prioritized,pymapf,32,32,0.25,0,solved,0.253731370998139,802,44,{}
+pibt,cuplan-cpu,32,32,0.25,0,solved,0.011985476998233935,964,50,{}
+pibt,cuplan-cuda,32,32,0.25,0,solved,0.009783685000002151,964,50,{}
+pibt,pymapf,32,32,0.25,0,solved,0.0650116020005953,981,50,{}
+prioritized,cuplan-cpu,32,32,0.25,1,solved,0.06635946800088277,884,50,{}
+prioritized,cuplan-cuda,32,32,0.25,1,solved,0.049378710999008035,884,50,{}
+prioritized,pymapf,32,32,0.25,1,solved,0.28877646200271556,895,50,{}
+pibt,cuplan-cpu,32,32,0.25,1,solved,0.012245237001479836,1018,55,{}
+pibt,cuplan-cuda,32,32,0.25,1,solved,0.010138939000171376,1018,55,{}
+pibt,pymapf,32,32,0.25,1,solved,0.06570455400287756,1062,56,{}
+prioritized,cuplan-cpu,32,32,0.25,2,solved,0.06100260200037155,812,42,{}
+prioritized,cuplan-cuda,32,32,0.25,2,solved,0.04477450500053237,812,42,{}
+prioritized,pymapf,32,32,0.25,2,solved,0.25352636000025086,835,44,{}
+pibt,cuplan-cpu,32,32,0.25,2,solved,0.011015108997526113,890,46,{}
+pibt,cuplan-cuda,32,32,0.25,2,solved,0.009135252999840304,890,46,{}
+pibt,pymapf,32,32,0.25,2,solved,0.0650780610012589,1009,57,{}
+prioritized,cuplan-cpu,32,64,0.25,0,solved,0.1399246660002973,1852,53,{}
+prioritized,cuplan-cuda,32,64,0.25,0,solved,0.094360652998148,1852,53,{}
+prioritized,pymapf,32,64,0.25,0,solved,2.2015868989983574,1914,52,{}
+pibt,cuplan-cpu,32,64,0.25,0,solved,0.019913141000870382,2001,51,{}
+pibt,cuplan-cuda,32,64,0.25,0,solved,0.014296196000941563,2001,51,{}
+pibt,pymapf,32,64,0.25,0,solved,0.13126680299683358,1991,50,{}
+prioritized,cuplan-cpu,32,64,0.25,1,solved,0.1329605629980506,1765,54,{}
+prioritized,cuplan-cuda,32,64,0.25,1,solved,0.09200630800114595,1765,54,{}
+prioritized,pymapf,32,64,0.25,1,solved,2.0316405439989467,1881,52,{}
+pibt,cuplan-cpu,32,64,0.25,1,solved,0.021157264996872982,2082,59,{}
+pibt,cuplan-cuda,32,64,0.25,1,solved,0.016413593999459408,2082,59,{}
+pibt,pymapf,32,64,0.25,1,solved,0.13422569799877238,2022,61,{}
+prioritized,cuplan-cpu,32,64,0.25,2,unsolved,0.13800879799964605,,,{}
+prioritized,cuplan-cuda,32,64,0.25,2,unsolved,0.09405507799965562,,,{}
+prioritized,pymapf,32,64,0.25,2,unsolved,18.687435957999696,,,{}
+pibt,cuplan-cpu,32,64,0.25,2,solved,0.020746529000462033,1943,60,{}
+pibt,cuplan-cuda,32,64,0.25,2,solved,0.03027825399840367,1943,60,{}
+pibt,pymapf,32,64,0.25,2,solved,0.1308542850019876,2033,57,{}
+prioritized,cuplan-cpu,32,128,0.25,0,unsolved,0.24969453899757355,,,{}
+prioritized,cuplan-cuda,32,128,0.25,0,unsolved,0.15956729400204495,,,{}
+prioritized,pymapf,32,128,0.25,0,unsolved,41.97108299499814,,,{}
+pibt,cuplan-cpu,32,128,0.25,0,unsolved,0.3420882230020652,,,{}
+pibt,cuplan-cuda,32,128,0.25,0,unsolved,0.3379132669979299,,,{}
+pibt,pymapf,32,128,0.25,0,solved,0.2751037689995428,5654,81,{}
+prioritized,cuplan-cpu,32,128,0.25,1,unsolved,0.3326689579989761,,,{}
+prioritized,cuplan-cuda,32,128,0.25,1,unsolved,0.20500781499868026,,,{}
+prioritized,pymapf,32,128,0.25,1,unsolved,42.78351608700177,,,{}
+pibt,cuplan-cpu,32,128,0.25,1,solved,0.046901197001716355,6024,86,{}
+pibt,cuplan-cuda,32,128,0.25,1,solved,0.04746768199765938,6024,86,{}
+pibt,pymapf,32,128,0.25,1,unsolved,1.0058303020014137,,,{}
+prioritized,cuplan-cpu,32,128,0.25,2,unsolved,0.18013715499910177,,,{}
+prioritized,cuplan-cuda,32,128,0.25,2,unsolved,0.1148922530010168,,,{}
+prioritized,pymapf,32,128,0.25,2,unsolved,16.96069556099974,,,{}
+pibt,cuplan-cpu,32,128,0.25,2,unsolved,0.32947125200007576,,,{}
+pibt,cuplan-cuda,32,128,0.25,2,unsolved,0.3333743240000331,,,{}
+pibt,pymapf,32,128,0.25,2,unsolved,1.0058148550015176,,,{}
+prioritized,cuplan-cpu,64,8,0.05,0,solved,0.030396366000786657,315,60,{}
+prioritized,cuplan-cuda,64,8,0.05,0,solved,0.01926181399903726,315,60,{}
+prioritized,pymapf,64,8,0.05,0,solved,0.047566953999194084,315,60,{}
+pibt,cuplan-cpu,64,8,0.05,0,solved,0.010157987002457958,315,60,{}
+pibt,cuplan-cuda,64,8,0.05,0,solved,0.007996172997081885,315,60,{}
+pibt,pymapf,64,8,0.05,0,solved,0.0757385479992081,315,60,{}
+prioritized,cuplan-cpu,64,8,0.05,1,solved,0.025506450001557823,254,67,{}
+prioritized,cuplan-cuda,64,8,0.05,1,solved,0.016772163999121403,254,67,{}
+prioritized,pymapf,64,8,0.05,1,solved,0.04235886400056188,254,67,{}
+pibt,cuplan-cpu,64,8,0.05,1,solved,0.010599835997709306,254,67,{}
+pibt,cuplan-cuda,64,8,0.05,1,solved,0.008562487000745023,254,67,{}
+pibt,pymapf,64,8,0.05,1,solved,0.07522844199775136,254,67,{}
+prioritized,cuplan-cpu,64,8,0.05,2,solved,0.035313222997501725,381,73,{}
+prioritized,cuplan-cuda,64,8,0.05,2,solved,0.020924556996760657,381,73,{}
+prioritized,pymapf,64,8,0.05,2,solved,0.05922297399956733,381,73,{}
+pibt,cuplan-cpu,64,8,0.05,2,solved,0.010631764002027921,382,73,{}
+pibt,cuplan-cuda,64,8,0.05,2,solved,0.00866067400056636,382,73,{}
+pibt,pymapf,64,8,0.05,2,solved,0.07628519300124026,382,73,{}
+prioritized,cuplan-cpu,64,16,0.05,0,solved,0.06300289000137127,667,80,{}
+prioritized,cuplan-cuda,64,16,0.05,0,solved,0.036219450001226505,667,80,{}
+prioritized,pymapf,64,16,0.05,0,solved,0.32191403699835064,684,80,{}
+pibt,cuplan-cpu,64,16,0.05,0,solved,0.017517894000775414,668,80,{}
+pibt,cuplan-cuda,64,16,0.05,0,solved,0.011318888999085175,668,80,{}
+pibt,pymapf,64,16,0.05,0,solved,0.1523099709993403,690,80,{}
+prioritized,cuplan-cpu,64,16,0.05,1,solved,0.07755338100105291,839,107,{}
+prioritized,cuplan-cuda,64,16,0.05,1,solved,0.04290371400202275,839,107,{}
+prioritized,pymapf,64,16,0.05,1,solved,0.2435212020027393,839,107,{}
+pibt,cuplan-cpu,64,16,0.05,1,solved,0.02009825099958107,873,107,{}
+pibt,cuplan-cuda,64,16,0.05,1,solved,0.013894228999561165,873,107,{}
+pibt,pymapf,64,16,0.05,1,solved,0.15672580600221409,839,107,{}
+prioritized,cuplan-cpu,64,16,0.05,2,solved,0.06537329200000386,705,92,{}
+prioritized,cuplan-cuda,64,16,0.05,2,solved,0.03696052099985536,705,92,{}
+prioritized,pymapf,64,16,0.05,2,solved,0.21487736299968674,705,92,{}
+pibt,cuplan-cpu,64,16,0.05,2,solved,0.018206853997980943,742,92,{}
+pibt,cuplan-cuda,64,16,0.05,2,solved,0.0122752360002778,742,92,{}
+pibt,pymapf,64,16,0.05,2,solved,0.15441634600210818,714,92,{}
+prioritized,cuplan-cpu,64,32,0.05,0,solved,0.12718058999962523,1345,98,{}
+prioritized,cuplan-cuda,64,32,0.05,0,solved,0.06926306799869053,1345,98,{}
+prioritized,pymapf,64,32,0.05,0,solved,1.2744782099980512,1347,98,{}
+pibt,cuplan-cpu,64,32,0.05,0,solved,0.03124400800152216,1339,98,{}
+pibt,cuplan-cuda,64,32,0.05,0,solved,0.0190305169999192,1339,98,{}
+pibt,pymapf,64,32,0.05,0,solved,0.306438874999003,1376,98,{}
+prioritized,cuplan-cpu,64,32,0.05,1,solved,0.13129138200019952,1418,110,{}
+prioritized,cuplan-cuda,64,32,0.05,1,solved,0.07031603999712388,1418,110,{}
+prioritized,pymapf,64,32,0.05,1,solved,1.4341891410003882,1428,110,{}
+pibt,cuplan-cpu,64,32,0.05,1,solved,0.032924531999015016,1361,110,{}
+pibt,cuplan-cuda,64,32,0.05,1,solved,0.01958813799865311,1361,110,{}
+pibt,pymapf,64,32,0.05,1,solved,0.315169330999197,1432,110,{}
+prioritized,cuplan-cpu,64,32,0.05,2,solved,0.1139040460002434,1236,89,{}
+prioritized,cuplan-cuda,64,32,0.05,2,solved,0.06533013700027368,1236,89,{}
+prioritized,pymapf,64,32,0.05,2,solved,1.389815909002209,1300,89,{}
+pibt,cuplan-cpu,64,32,0.05,2,solved,0.02887241999997059,1362,89,{}
+pibt,cuplan-cuda,64,32,0.05,2,solved,0.01648184400255559,1362,89,{}
+pibt,pymapf,64,32,0.05,2,solved,0.30609847999949125,1301,89,{}
+prioritized,cuplan-cpu,64,64,0.05,0,solved,0.2668175490034628,2856,97,{}
+prioritized,cuplan-cuda,64,64,0.05,0,solved,0.13905288900059531,2856,97,{}
+prioritized,pymapf,64,64,0.05,0,solved,7.493635622999136,2922,97,{}
+pibt,cuplan-cpu,64,64,0.05,0,solved,0.058063661999767646,3108,97,{}
+pibt,cuplan-cuda,64,64,0.05,0,solved,0.026655202000256395,3108,97,{}
+pibt,pymapf,64,64,0.05,0,solved,0.6164364639989799,3124,97,{}
+prioritized,cuplan-cpu,64,64,0.05,1,solved,0.25539248900167877,2678,99,{}
+prioritized,cuplan-cuda,64,64,0.05,1,solved,0.12859578099960345,2678,99,{}
+prioritized,pymapf,64,64,0.05,1,solved,7.6540418669974315,2876,99,{}
+pibt,cuplan-cpu,64,64,0.05,1,solved,0.05762616600259207,2832,100,{}
+pibt,cuplan-cuda,64,64,0.05,1,solved,0.026840717997401953,2832,100,{}
+pibt,pymapf,64,64,0.05,1,solved,0.6180981940015045,2819,100,{}
+prioritized,cuplan-cpu,64,64,0.05,2,solved,0.251105354000174,2677,98,{}
+prioritized,cuplan-cuda,64,64,0.05,2,solved,0.1298938639993139,2677,98,{}
+prioritized,pymapf,64,64,0.05,2,solved,6.948338327998499,2686,98,{}
+pibt,cuplan-cpu,64,64,0.05,2,solved,0.05750964899925748,2774,98,{}
+pibt,cuplan-cuda,64,64,0.05,2,solved,0.026712476003012853,2774,98,{}
+pibt,pymapf,64,64,0.05,2,solved,0.6258414179974352,2900,98,{}
+prioritized,cuplan-cpu,64,128,0.05,0,solved,0.5902159930010384,6238,109,{}
+prioritized,cuplan-cuda,64,128,0.05,0,solved,0.2836768500019389,6238,109,{}
+prioritized,pymapf,64,128,0.05,0,solved,46.32003384299969,6231,109,{}
+pibt,cuplan-cpu,64,128,0.05,0,solved,0.12259176800216665,6912,112,{}
+pibt,cuplan-cuda,64,128,0.05,0,solved,0.06247484399864334,6912,112,{}
+pibt,pymapf,64,128,0.05,0,solved,1.251893602002383,6953,110,{}
+prioritized,cuplan-cpu,64,128,0.05,1,solved,0.5762112890006392,6122,97,{}
+prioritized,cuplan-cuda,64,128,0.05,1,solved,0.2939916010000161,6122,97,{}
+prioritized,pymapf,64,128,0.05,1,solved,52.899150622997695,6152,97,{}
+pibt,cuplan-cpu,64,128,0.05,1,solved,0.1177124729983916,6624,97,{}
+pibt,cuplan-cuda,64,128,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,128,0.05,1,solved,1.3438359280007717,6603,97,{}
+prioritized,cuplan-cpu,64,128,0.05,2,solved,0.6335560100014845,6119,108,{}
+prioritized,cuplan-cuda,64,128,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,128,0.05,2,solved,47.95414305500162,5905,108,{}
+pibt,cuplan-cpu,64,128,0.05,2,solved,0.11729877499965369,6484,108,{}
+pibt,cuplan-cuda,64,128,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,128,0.05,2,solved,1.2959988500006148,6616,108,{}
+prioritized,cuplan-cpu,64,256,0.05,0,solved,1.185119946996565,12052,102,{}
+prioritized,cuplan-cuda,64,256,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,256,0.05,0,timeout,60.0,,,"{""timeout_s"": 60.0}"
+pibt,cuplan-cpu,64,256,0.05,0,solved,0.23982321800212958,13671,102,{}
+pibt,cuplan-cuda,64,256,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,256,0.05,0,solved,2.6617586809989007,13609,105,{}
+prioritized,cuplan-cpu,64,256,0.05,1,solved,1.2877017440005147,12527,108,{}
+prioritized,cuplan-cuda,64,256,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,256,0.05,1,timeout,60.0,,,"{""timeout_s"": 60.0}"
+pibt,cuplan-cpu,64,256,0.05,1,solved,0.23360838599910494,14474,108,{}
+pibt,cuplan-cuda,64,256,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,256,0.05,1,solved,2.591624602999218,14962,108,{}
+prioritized,cuplan-cpu,64,256,0.05,2,solved,1.172981248000724,12792,108,{}
+prioritized,cuplan-cuda,64,256,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,256,0.05,2,timeout,60.0,,,"{""timeout_s"": 60.0}"
+pibt,cuplan-cpu,64,256,0.05,2,solved,0.23512265399767784,14533,112,{}
+pibt,cuplan-cuda,64,256,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,256,0.05,2,solved,2.77444335799737,14401,110,{}
+prioritized,cuplan-cpu,64,512,0.05,0,solved,3.0110033709970594,26832,114,{}
+prioritized,cuplan-cuda,64,512,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,512,0.05,0,skipped,,,,"{""reason"": ""all seeds timed out at 256 agents""}"
+pibt,cuplan-cpu,64,512,0.05,0,solved,0.5403169269993668,32548,114,{}
+pibt,cuplan-cuda,64,512,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,512,0.05,0,solved,5.240958418999071,31789,114,{}
+prioritized,cuplan-cpu,64,512,0.05,1,solved,3.1806626030011103,28195,112,{}
+prioritized,cuplan-cuda,64,512,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,512,0.05,1,skipped,,,,"{""reason"": ""all seeds timed out at 256 agents""}"
+pibt,cuplan-cpu,64,512,0.05,1,solved,0.5410059530004219,33306,111,{}
+pibt,cuplan-cuda,64,512,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,512,0.05,1,solved,5.637246360998688,33112,111,{}
+prioritized,cuplan-cpu,64,512,0.05,2,unsolved,1.2555620669991185,,,{}
+prioritized,cuplan-cuda,64,512,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,512,0.05,2,skipped,,,,"{""reason"": ""all seeds timed out at 256 agents""}"
+pibt,cuplan-cpu,64,512,0.05,2,solved,0.5404582789997221,31687,104,{}
+pibt,cuplan-cuda,64,512,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,512,0.05,2,solved,5.348045847000321,31531,106,{}
+prioritized,cuplan-cpu,64,8,0.15,0,solved,0.03433384999880218,326,66,{}
+prioritized,cuplan-cuda,64,8,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,8,0.15,0,solved,0.04844146799950977,326,66,{}
+pibt,cuplan-cpu,64,8,0.15,0,solved,0.012111489999369951,326,66,{}
+pibt,cuplan-cuda,64,8,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,8,0.15,0,solved,0.07056574000307592,326,66,{}
+prioritized,cuplan-cpu,64,8,0.15,1,solved,0.026942214000882814,245,68,{}
+prioritized,cuplan-cuda,64,8,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,8,0.15,1,solved,0.04298975799974869,245,68,{}
+pibt,cuplan-cpu,64,8,0.15,1,solved,0.011443285002314951,248,68,{}
+pibt,cuplan-cuda,64,8,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,8,0.15,1,solved,0.0722998799974448,245,68,{}
+prioritized,cuplan-cpu,64,8,0.15,2,solved,0.03831205599999521,380,71,{}
+prioritized,cuplan-cuda,64,8,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,8,0.15,2,solved,0.05560401900220313,381,71,{}
+pibt,cuplan-cpu,64,8,0.15,2,solved,0.010950001000310294,401,71,{}
+pibt,cuplan-cuda,64,8,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,8,0.15,2,solved,0.07093632999749389,380,71,{}
+prioritized,cuplan-cpu,64,16,0.15,0,solved,0.057408265998674324,553,73,{}
+prioritized,cuplan-cuda,64,16,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,16,0.15,0,solved,0.19505472300079418,553,73,{}
+pibt,cuplan-cpu,64,16,0.15,0,solved,0.017406560000381432,553,73,{}
+pibt,cuplan-cuda,64,16,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,16,0.15,0,solved,0.1409166000012192,553,73,{}
+prioritized,cuplan-cpu,64,16,0.15,1,solved,0.08172945999831427,835,83,{}
+prioritized,cuplan-cuda,64,16,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,16,0.15,1,solved,0.33973381699979655,835,83,{}
+pibt,cuplan-cpu,64,16,0.15,1,solved,0.0186222850024933,838,83,{}
+pibt,cuplan-cuda,64,16,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,16,0.15,1,solved,0.14310090700018918,841,83,{}
+prioritized,cuplan-cpu,64,16,0.15,2,solved,0.07271782200041343,736,73,{}
+prioritized,cuplan-cuda,64,16,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,16,0.15,2,solved,0.2250952190006501,733,73,{}
+pibt,cuplan-cpu,64,16,0.15,2,solved,0.0170517420010583,738,73,{}
+pibt,cuplan-cuda,64,16,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,16,0.15,2,solved,0.14165690500158234,783,75,{}
+prioritized,cuplan-cpu,64,32,0.15,0,solved,0.1204894639995473,1165,72,{}
+prioritized,cuplan-cuda,64,32,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,32,0.15,0,solved,1.0780409689978114,1171,72,{}
+pibt,cuplan-cpu,64,32,0.15,0,solved,0.03008122300161631,1168,72,{}
+pibt,cuplan-cuda,64,32,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,32,0.15,0,solved,0.2815135780001583,1175,72,{}
+prioritized,cuplan-cpu,64,32,0.15,1,solved,0.15254142599951592,1511,109,{}
+prioritized,cuplan-cuda,64,32,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,32,0.15,1,solved,2.353152505998878,1680,109,{}
+pibt,cuplan-cpu,64,32,0.15,1,solved,0.03561761999662849,1549,109,{}
+pibt,cuplan-cuda,64,32,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,32,0.15,1,solved,0.2851295529981144,1606,109,{}
+prioritized,cuplan-cpu,64,32,0.15,2,solved,0.1325937059991702,1344,90,{}
+prioritized,cuplan-cuda,64,32,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,32,0.15,2,solved,1.4042982739993022,1358,90,{}
+pibt,cuplan-cpu,64,32,0.15,2,solved,0.03988310400018236,1436,90,{}
+pibt,cuplan-cuda,64,32,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,32,0.15,2,solved,0.29163014400182874,1442,90,{}
+prioritized,cuplan-cpu,64,64,0.15,0,solved,0.29569200000332785,2748,93,{}
+prioritized,cuplan-cuda,64,64,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,64,0.15,0,solved,8.034544912003184,2780,93,{}
+pibt,cuplan-cpu,64,64,0.15,0,solved,0.05838089900134946,3043,93,{}
+pibt,cuplan-cuda,64,64,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,64,0.15,0,solved,0.5790566859977844,3006,93,{}
+prioritized,cuplan-cpu,64,64,0.15,1,solved,0.2894351449976966,2871,95,{}
+prioritized,cuplan-cuda,64,64,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,64,0.15,1,solved,8.118696470999566,2711,95,{}
+pibt,cuplan-cpu,64,64,0.15,1,solved,0.06458551800096757,3048,95,{}
+pibt,cuplan-cuda,64,64,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,64,0.15,1,solved,0.584252386001026,2983,95,{}
+prioritized,cuplan-cpu,64,64,0.15,2,solved,0.2874760469967441,2720,99,{}
+prioritized,cuplan-cuda,64,64,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,64,0.15,2,solved,8.652205025002331,2877,99,{}
+pibt,cuplan-cpu,64,64,0.15,2,solved,0.0619299409991072,2978,99,{}
+pibt,cuplan-cuda,64,64,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,64,0.15,2,solved,0.5657076940005936,3035,99,{}
+prioritized,cuplan-cpu,64,128,0.15,0,solved,0.6229904510000779,6275,104,{}
+prioritized,cuplan-cuda,64,128,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,128,0.15,0,solved,48.41823810600181,6194,104,{}
+pibt,cuplan-cpu,64,128,0.15,0,solved,0.11253739700259757,7002,107,{}
+pibt,cuplan-cuda,64,128,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,128,0.15,0,solved,1.0721675739987404,7223,105,{}
+prioritized,cuplan-cpu,64,128,0.15,1,solved,0.5642006289999699,5948,113,{}
+prioritized,cuplan-cuda,64,128,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,128,0.15,1,solved,54.026582914000755,6074,113,{}
+pibt,cuplan-cpu,64,128,0.15,1,solved,0.12639804699938395,6798,114,{}
+pibt,cuplan-cuda,64,128,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,128,0.15,1,solved,1.2022057879985368,6565,117,{}
+prioritized,cuplan-cpu,64,128,0.15,2,solved,0.6270630809995055,6420,96,{}
+prioritized,cuplan-cuda,64,128,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,128,0.15,2,solved,47.71140372199807,6418,96,{}
+pibt,cuplan-cpu,64,128,0.15,2,solved,0.11531164500047453,7116,103,{}
+pibt,cuplan-cuda,64,128,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,128,0.15,2,solved,1.132597044997965,7021,102,{}
+prioritized,cuplan-cpu,64,256,0.15,0,unsolved,1.1438186109990056,,,{}
+prioritized,cuplan-cuda,64,256,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,256,0.15,0,timeout,60.0,,,"{""timeout_s"": 60.0}"
+pibt,cuplan-cpu,64,256,0.15,0,solved,0.23163385299994843,14896,103,{}
+pibt,cuplan-cuda,64,256,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,256,0.15,0,solved,2.4354356750009174,14590,100,{}
+prioritized,cuplan-cpu,64,256,0.15,1,solved,1.399692988001334,12805,117,{}
+prioritized,cuplan-cuda,64,256,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,256,0.15,1,timeout,60.0,,,"{""timeout_s"": 60.0}"
+pibt,cuplan-cpu,64,256,0.15,1,unsolved,2.297310165999079,,,{}
+pibt,cuplan-cuda,64,256,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,256,0.15,1,unsolved,8.491465390001395,,,{}
+prioritized,cuplan-cpu,64,256,0.15,2,solved,1.4263570829971286,13374,98,{}
+prioritized,cuplan-cuda,64,256,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,256,0.15,2,timeout,60.0,,,"{""timeout_s"": 60.0}"
+pibt,cuplan-cpu,64,256,0.15,2,unsolved,6.611492871001246,,,{}
+pibt,cuplan-cuda,64,256,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,256,0.15,2,solved,8.445389316002547,15791,101,{}
+prioritized,cuplan-cpu,64,512,0.15,0,unsolved,6.523735435002891,,,{}
+prioritized,cuplan-cuda,64,512,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,512,0.15,0,skipped,,,,"{""reason"": ""all seeds timed out at 256 agents""}"
+pibt,cuplan-cpu,64,512,0.15,0,solved,1.784878006998042,37555,137,{}
+pibt,cuplan-cuda,64,512,0.15,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,512,0.15,0,solved,5.809297494997736,37016,119,{}
+prioritized,cuplan-cpu,64,512,0.15,1,solved,3.0617295439988084,27780,110,{}
+prioritized,cuplan-cuda,64,512,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,512,0.15,1,skipped,,,,"{""reason"": ""all seeds timed out at 256 agents""}"
+pibt,cuplan-cpu,64,512,0.15,1,unsolved,7.762322497997957,,,{}
+pibt,cuplan-cuda,64,512,0.15,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,512,0.15,1,unsolved,19.224631645000045,,,{}
+prioritized,cuplan-cpu,64,512,0.15,2,unsolved,3.1809359610015235,,,{}
+prioritized,cuplan-cuda,64,512,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,512,0.15,2,skipped,,,,"{""reason"": ""all seeds timed out at 256 agents""}"
+pibt,cuplan-cpu,64,512,0.15,2,unsolved,5.513205791001383,,,{}
+pibt,cuplan-cuda,64,512,0.15,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,512,0.15,2,solved,4.6700838030010345,37327,124,{}
+prioritized,cuplan-cpu,64,8,0.25,0,solved,0.04063843900075881,406,88,{}
+prioritized,cuplan-cuda,64,8,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,8,0.25,0,solved,0.0708081630000379,406,88,{}
+pibt,cuplan-cpu,64,8,0.25,0,solved,0.012953816996741807,417,88,{}
+pibt,cuplan-cuda,64,8,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,8,0.25,0,solved,0.06172917900039465,423,88,{}
+prioritized,cuplan-cpu,64,8,0.25,1,solved,0.03934128499895451,389,81,{}
+prioritized,cuplan-cuda,64,8,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,8,0.25,1,solved,0.07718395599658834,389,81,{}
+pibt,cuplan-cpu,64,8,0.25,1,solved,0.012151103997894097,416,81,{}
+pibt,cuplan-cuda,64,8,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,8,0.25,1,solved,0.06068377299743588,412,81,{}
+prioritized,cuplan-cpu,64,8,0.25,2,solved,0.04236792600204353,420,84,{}
+prioritized,cuplan-cuda,64,8,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,8,0.25,2,solved,0.27497055400090176,420,84,{}
+pibt,cuplan-cpu,64,8,0.25,2,solved,0.011984030999883544,420,82,{}
+pibt,cuplan-cuda,64,8,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,8,0.25,2,solved,0.061889404998510145,422,84,{}
+prioritized,cuplan-cpu,64,16,0.25,0,solved,0.0697930530004669,689,76,{}
+prioritized,cuplan-cuda,64,16,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,16,0.25,0,solved,0.264395116999367,689,76,{}
+pibt,cuplan-cpu,64,16,0.25,0,solved,0.017504491999716265,690,76,{}
+pibt,cuplan-cuda,64,16,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,16,0.25,0,solved,0.12273507300051278,689,76,{}
+prioritized,cuplan-cpu,64,16,0.25,1,solved,0.06703477900009602,675,81,{}
+prioritized,cuplan-cuda,64,16,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,16,0.25,1,solved,0.18787325100129237,675,81,{}
+pibt,cuplan-cpu,64,16,0.25,1,solved,0.017631617000006372,704,81,{}
+pibt,cuplan-cuda,64,16,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,16,0.25,1,solved,0.12261709599988535,700,84,{}
+prioritized,cuplan-cpu,64,16,0.25,2,solved,0.07729581099920324,751,103,{}
+prioritized,cuplan-cuda,64,16,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,16,0.25,2,solved,0.6103710379975382,816,103,{}
+pibt,cuplan-cpu,64,16,0.25,2,solved,0.020374105999508174,753,103,{}
+pibt,cuplan-cuda,64,16,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,16,0.25,2,solved,0.12378187300055288,758,103,{}
+prioritized,cuplan-cpu,64,32,0.25,0,solved,0.15045990900034667,1490,106,{}
+prioritized,cuplan-cuda,64,32,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,32,0.25,0,solved,1.2693687659993884,1419,106,{}
+pibt,cuplan-cpu,64,32,0.25,0,solved,0.034609132999321446,1471,106,{}
+pibt,cuplan-cuda,64,32,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,32,0.25,0,solved,0.24712274999910733,1472,106,{}
+prioritized,cuplan-cpu,64,32,0.25,1,solved,0.15274117199805914,1577,106,{}
+prioritized,cuplan-cuda,64,32,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,32,0.25,1,solved,1.3533706640009768,1559,106,{}
+pibt,cuplan-cpu,64,32,0.25,1,unsolved,0.35403427699930035,,,{}
+pibt,cuplan-cuda,64,32,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,32,0.25,1,solved,0.24696372500329744,1706,117,{}
+prioritized,cuplan-cpu,64,32,0.25,2,solved,0.14556457700018655,1474,92,{}
+prioritized,cuplan-cuda,64,32,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,32,0.25,2,solved,1.467165832000319,1516,92,{}
+pibt,cuplan-cpu,64,32,0.25,2,solved,0.03313756300121895,1609,102,{}
+pibt,cuplan-cuda,64,32,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,32,0.25,2,solved,0.24137671400239924,1635,101,{}
+prioritized,cuplan-cpu,64,64,0.25,0,solved,0.2809655790006218,2868,92,{}
+prioritized,cuplan-cuda,64,64,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,64,0.25,0,solved,7.915334080000321,2956,92,{}
+pibt,cuplan-cpu,64,64,0.25,0,solved,0.06482382399917697,3074,93,{}
+pibt,cuplan-cuda,64,64,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,64,0.25,0,solved,0.5311833319974539,3066,91,{}
+prioritized,cuplan-cpu,64,64,0.25,1,solved,0.31901210000069113,2985,90,{}
+prioritized,cuplan-cuda,64,64,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,64,0.25,1,solved,15.213806035000744,2935,90,{}
+pibt,cuplan-cpu,64,64,0.25,1,solved,0.24324120500023128,3298,91,{}
+pibt,cuplan-cuda,64,64,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,64,0.25,1,solved,2.2462114760019176,3173,90,{}
+prioritized,cuplan-cpu,64,64,0.25,2,solved,1.648469912001019,3069,106,{}
+prioritized,cuplan-cuda,64,64,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,64,0.25,2,solved,31.895926984001562,3145,106,{}
+pibt,cuplan-cpu,64,64,0.25,2,solved,0.19470830299906083,3591,112,{}
+pibt,cuplan-cuda,64,64,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,64,0.25,2,solved,1.675445757999114,3349,105,{}
+prioritized,cuplan-cpu,64,128,0.25,0,solved,1.49860420999903,6767,101,{}
+prioritized,cuplan-cuda,64,128,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,128,0.25,0,timeout,60.0,,,"{""timeout_s"": 60.0}"
+pibt,cuplan-cpu,64,128,0.25,0,unsolved,1.033460960999946,,,{}
+pibt,cuplan-cuda,64,128,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,128,0.25,0,solved,1.034534011996584,7774,123,{}
+prioritized,cuplan-cpu,64,128,0.25,1,solved,0.6662663669994799,6096,105,{}
+prioritized,cuplan-cuda,64,128,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,128,0.25,1,timeout,60.0,,,"{""timeout_s"": 60.0}"
+pibt,cuplan-cpu,64,128,0.25,1,solved,0.37369372799730627,7172,104,{}
+pibt,cuplan-cuda,64,128,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,128,0.25,1,unsolved,9.520009231000586,,,{}
+prioritized,cuplan-cpu,64,128,0.25,2,unsolved,1.1131652170006419,,,{}
+prioritized,cuplan-cuda,64,128,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,128,0.25,2,timeout,60.0,,,"{""timeout_s"": 60.0}"
+pibt,cuplan-cpu,64,128,0.25,2,solved,0.13684655199904228,8418,122,{}
+pibt,cuplan-cuda,64,128,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,128,0.25,2,solved,1.0919117860030383,8360,119,{}
+prioritized,cuplan-cpu,64,256,0.25,0,solved,1.6025149179986329,14443,106,{}
+prioritized,cuplan-cuda,64,256,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,256,0.25,0,skipped,,,,"{""reason"": ""all seeds timed out at 128 agents""}"
+pibt,cuplan-cpu,64,256,0.25,0,unsolved,2.209220094999182,,,{}
+pibt,cuplan-cuda,64,256,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,256,0.25,0,unsolved,7.593176025999128,,,{}
+prioritized,cuplan-cpu,64,256,0.25,1,unsolved,1.4045209479991172,,,{}
+prioritized,cuplan-cuda,64,256,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,256,0.25,1,skipped,,,,"{""reason"": ""all seeds timed out at 128 agents""}"
+pibt,cuplan-cpu,64,256,0.25,1,unsolved,2.1802843199984636,,,{}
+pibt,cuplan-cuda,64,256,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,256,0.25,1,unsolved,7.366660662002687,,,{}
+prioritized,cuplan-cpu,64,256,0.25,2,unsolved,0.8640580920000502,,,{}
+prioritized,cuplan-cuda,64,256,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,256,0.25,2,skipped,,,,"{""reason"": ""all seeds timed out at 128 agents""}"
+pibt,cuplan-cpu,64,256,0.25,2,solved,0.27649290000044857,18355,126,{}
+pibt,cuplan-cuda,64,256,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,256,0.25,2,unsolved,7.256057874998078,,,{}
+prioritized,cuplan-cpu,64,512,0.25,0,unsolved,1.5595195290006814,,,{}
+prioritized,cuplan-cuda,64,512,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,512,0.25,0,skipped,,,,"{""reason"": ""all seeds timed out at 128 agents""}"
+pibt,cuplan-cpu,64,512,0.25,0,unsolved,5.298634459999448,,,{}
+pibt,cuplan-cuda,64,512,0.25,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,512,0.25,0,unsolved,49.16451804999815,,,{}
+prioritized,cuplan-cpu,64,512,0.25,1,unsolved,4.559765713998786,,,{}
+prioritized,cuplan-cuda,64,512,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,512,0.25,1,skipped,,,,"{""reason"": ""all seeds timed out at 128 agents""}"
+pibt,cuplan-cpu,64,512,0.25,1,unsolved,14.990661483996519,,,{}
+pibt,cuplan-cuda,64,512,0.25,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,512,0.25,1,timeout,60.0,,,"{""timeout_s"": 60.0}"
+prioritized,cuplan-cpu,64,512,0.25,2,unsolved,5.081802140997752,,,{}
+prioritized,cuplan-cuda,64,512,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,64,512,0.25,2,skipped,,,,"{""reason"": ""all seeds timed out at 128 agents""}"
+pibt,cuplan-cpu,64,512,0.25,2,unsolved,17.52617231199838,,,{}
+pibt,cuplan-cuda,64,512,0.25,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,64,512,0.25,2,timeout,60.0,,,"{""timeout_s"": 60.0}"
+prioritized,cuplan-cpu,128,8,0.05,0,solved,0.4880015070011723,905,178,{}
+prioritized,cuplan-cuda,128,8,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,8,0.05,0,solved,1.7035231469999417,913,178,{}
+pibt,cuplan-cpu,128,8,0.05,0,solved,0.11972368599890615,905,178,{}
+pibt,cuplan-cuda,128,8,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,8,0.05,0,solved,1.1201808859987068,905,178,{}
+prioritized,cuplan-cpu,128,8,0.05,1,solved,0.3582254050015763,664,183,{}
+prioritized,cuplan-cuda,128,8,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,8,0.05,1,solved,1.000941858997976,664,183,{}
+pibt,cuplan-cpu,128,8,0.05,1,solved,0.12511892999827978,664,183,{}
+pibt,cuplan-cuda,128,8,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,8,0.05,1,solved,1.0842961599992123,664,183,{}
+prioritized,cuplan-cpu,128,8,0.05,2,solved,0.3572945220003021,731,179,{}
+prioritized,cuplan-cuda,128,8,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,8,0.05,2,solved,1.037650649999705,731,179,{}
+pibt,cuplan-cpu,128,8,0.05,2,solved,0.10156614700099453,795,179,{}
+pibt,cuplan-cuda,128,8,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,8,0.05,2,solved,1.1405401439988054,795,179,{}
+prioritized,cuplan-cpu,128,16,0.05,0,solved,0.746662458001083,1339,187,{}
+prioritized,cuplan-cuda,128,16,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,16,0.05,0,solved,7.6156327330027125,1391,187,{}
+pibt,cuplan-cpu,128,16,0.05,0,solved,0.20870633099912084,1447,187,{}
+pibt,cuplan-cuda,128,16,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,16,0.05,0,solved,2.0836663720001525,1391,187,{}
+prioritized,cuplan-cpu,128,16,0.05,1,solved,0.6694197019969579,1266,223,{}
+prioritized,cuplan-cuda,128,16,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,16,0.05,1,solved,3.8488128120006877,1179,223,{}
+pibt,cuplan-cpu,128,16,0.05,1,solved,0.19425413600038155,1162,223,{}
+pibt,cuplan-cuda,128,16,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,16,0.05,1,solved,2.1667889460004517,1162,223,{}
+prioritized,cuplan-cpu,128,16,0.05,2,solved,0.7307558190004784,1516,191,{}
+prioritized,cuplan-cuda,128,16,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,16,0.05,2,solved,4.015714701999968,1516,191,{}
+pibt,cuplan-cpu,128,16,0.05,2,solved,0.19344588199965074,1521,191,{}
+pibt,cuplan-cuda,128,16,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,16,0.05,2,solved,2.2943571520008845,1517,191,{}
+prioritized,cuplan-cpu,128,32,0.05,0,solved,1.4696379519991751,2914,186,{}
+prioritized,cuplan-cuda,128,32,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,32,0.05,0,solved,15.320556529997702,2765,186,{}
+pibt,cuplan-cpu,128,32,0.05,0,solved,0.36085767399708857,2867,186,{}
+pibt,cuplan-cuda,128,32,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,32,0.05,0,solved,2.8217248680011835,2838,186,{}
+prioritized,cuplan-cpu,128,32,0.05,1,solved,0.9639205950006726,2974,176,{}
+prioritized,cuplan-cuda,128,32,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,32,0.05,1,solved,13.95516953599872,3027,176,{}
+pibt,cuplan-cpu,128,32,0.05,1,solved,0.18148017699786578,3034,176,{}
+pibt,cuplan-cuda,128,32,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,32,0.05,1,solved,1.8626109090000682,3124,176,{}
+prioritized,cuplan-cpu,128,32,0.05,2,solved,0.6565295979999064,2818,180,{}
+prioritized,cuplan-cuda,128,32,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,32,0.05,2,solved,9.735054521002894,2909,180,{}
+pibt,cuplan-cpu,128,32,0.05,2,solved,0.21806465999907232,2907,180,{}
+pibt,cuplan-cuda,128,32,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,32,0.05,2,solved,1.6342636689987557,2906,180,{}
+prioritized,cuplan-cpu,128,64,0.05,0,solved,1.4859582760000194,6397,188,{}
+prioritized,cuplan-cuda,128,64,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,64,0.05,0,solved,40.55053783600306,6510,188,{}
+pibt,cuplan-cpu,128,64,0.05,0,solved,0.255583555001067,6485,190,{}
+pibt,cuplan-cuda,128,64,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,64,0.05,0,solved,2.5152967199974228,6465,190,{}
+prioritized,cuplan-cpu,128,64,0.05,1,solved,0.8759905369988701,5217,195,{}
+prioritized,cuplan-cuda,128,64,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,64,0.05,1,solved,26.225179452998418,5069,195,{}
+pibt,cuplan-cpu,128,64,0.05,1,solved,0.2451011320008547,5437,195,{}
+pibt,cuplan-cuda,128,64,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,64,0.05,1,solved,2.4629108349981834,5319,195,{}
+prioritized,cuplan-cpu,128,64,0.05,2,solved,0.8649087960002362,5297,189,{}
+prioritized,cuplan-cuda,128,64,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,64,0.05,2,solved,46.276865869000176,5425,189,{}
+pibt,cuplan-cpu,128,64,0.05,2,solved,0.8115047050014255,5433,189,{}
+pibt,cuplan-cuda,128,64,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,64,0.05,2,solved,9.201966889002506,5209,189,{}
+prioritized,cuplan-cpu,128,128,0.05,0,solved,5.989053558001615,11738,205,{}
+prioritized,cuplan-cuda,128,128,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,128,0.05,0,timeout,60.0,,,"{""timeout_s"": 60.0}"
+pibt,cuplan-cpu,128,128,0.05,0,solved,0.5974608470023668,11514,205,{}
+pibt,cuplan-cuda,128,128,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,128,0.05,0,solved,6.331628476000333,11387,205,{}
+prioritized,cuplan-cpu,128,128,0.05,1,solved,2.0344177760016464,10729,197,{}
+prioritized,cuplan-cuda,128,128,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,128,0.05,1,timeout,60.0,,,"{""timeout_s"": 60.0}"
+pibt,cuplan-cpu,128,128,0.05,1,solved,1.9128757099970244,11080,197,{}
+pibt,cuplan-cuda,128,128,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,128,0.05,1,solved,17.83663797200279,10940,197,{}
+prioritized,cuplan-cpu,128,128,0.05,2,solved,6.214087290001771,11376,191,{}
+prioritized,cuplan-cuda,128,128,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,128,0.05,2,timeout,60.0,,,"{""timeout_s"": 60.0}"
+pibt,cuplan-cpu,128,128,0.05,2,solved,1.5941578070014657,11858,191,{}
+pibt,cuplan-cuda,128,128,0.05,2,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,128,0.05,2,solved,17.177480506001302,11824,191,{}
+prioritized,cuplan-cpu,128,256,0.05,0,solved,13.342365905999031,24807,196,{}
+prioritized,cuplan-cuda,128,256,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,256,0.05,0,skipped,,,,"{""reason"": ""all seeds timed out at 128 agents""}"
+pibt,cuplan-cpu,128,256,0.05,0,solved,3.3663899149978533,26592,196,{}
+pibt,cuplan-cuda,128,256,0.05,0,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+pibt,pymapf,128,256,0.05,0,solved,35.73350777000087,26855,200,{}
+prioritized,cuplan-cpu,128,256,0.05,1,solved,13.495110015002865,23020,221,{}
+prioritized,cuplan-cuda,128,256,0.05,1,error,,,,"{""reason"": ""CUDARuntimeError: cudaErrorUnknown: unknown error""}"
+prioritized,pymapf,128,256,0.05,1,skipped,,,,"{""reason"": ""all seeds timed out at 128 agents""}"
