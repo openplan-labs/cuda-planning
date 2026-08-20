@@ -92,6 +92,8 @@ return identical solutions.
 | PIBT, 64×64, 128 agents | 1.26 s | 0.12 s | **0.05 s** (24×) |
 | Batched BFS, 512 maps on 256×256 | — | 26.37 s | **1.03 s** (26×) |
 | Velocity obstacles, 128 agents × 80 steps | — | 1.37 s | **0.44 s** (3.1×) |
+| Prioritized planning, 128×128, 256 agents | — | 4.53 s | **1.14 s** (4.0×) |
+| Batched BFS, 1024 maps on 256×256 | — | 54.25 s | **1.86 s** (29×) |
 
 The wins come from batch size, and small instances go the other way:
 at 16 agents the velocity-obstacle step is *faster on the CPU*

@@ -90,6 +90,25 @@ agents do not see later ones), so a wall-clock comparison would time
 two different problems; see
 [the semantics note](algorithms/velocity-obstacles.md).
 
+## Large-scale extension (cuplan only)
+
+128×128 grids and batch sizes past the primary matrix, same protocol,
+pymapf omitted (its prioritized planner needs minutes per instance at
+this scale — extrapolate from the 64×64 table). All instances solved
+by both backends, identical costs.
+
+| workload | cuplan CPU | cuplan CUDA | speedup |
+| :-- | --: | --: | --: |
+| Prioritized, 128×128, 256 agents | 4.53 s | **1.14 s** | 4.0× |
+| PIBT, 128×128, 256 agents | 1.17 s | **0.22 s** | 5.2× |
+| Batched BFS, 1024 maps on 256×256 | 54.25 s | **1.86 s** | 29× |
+| Velocity obstacles, 512 agents × 80 steps | 23.23 s | **5.56 s** | 4.2× |
+
+The trend from the primary matrix continues: the CUDA margin grows
+with scale, and a 4 GB laptop GPU sustains 256-agent prioritized
+planning at interactive rates. Raw data:
+[`benchmarks/results/large/`](https://github.com/openplan-labs/cuda-planning/tree/main/benchmarks/results/large).
+
 ## Reading the numbers
 
 - The GPU pays off through *batch size*: many agents, many queries,
