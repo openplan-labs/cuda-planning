@@ -44,12 +44,23 @@ object churn — and stays one.
 On the 64² grid CUDA runs 1.2× at 8 agents rising to 2.2× at 64. On
 the 32² grid it is a coin toss: 0.96× at 8 agents, 1.4× at 64, and
 0.92× at 128 — the GPU *loses* on the largest 32² cell measured.
-A 32² grid is 1024 cells; ranking five candidate moves for even 128
-agents is 640 evaluations, which does not fill a launch, and the
-per-step kernel launches (three per timestep) are then pure overhead.
-Four times the cells at 64² is enough work per launch to pay for it.
-So for PIBT, `backend="cpu"` is the right default below roughly a
-64² grid, whatever the agent count.
+
+The reason is that the backend switch moves exactly one thing. In
+PIBT the device builds the [distance oracle](bfs.md) — one batched
+BFS, once, before the first timestep — and nothing else: the per-step
+candidate gather and the inheritance chains are host NumPy in both
+backends, [by construction](../algorithms/pibt.md#parallelization).
+So the CUDA margin is capped by the oracle's share of runtime, and
+that share is set by grid area. A 32² oracle is 1024 cells per map, a
+sub-millisecond job that does not repay handing the grid to a device
+and taking `n` maps back; four times the cells at 64², over roughly
+twice the BFS diameter, does. Agents make the *host* loop longer
+without giving the device more to do, which is why the 32² ratio
+falls back below 1× at 128 agents.
+
+So for PIBT, `backend="cpu"` is the right default below roughly a 64²
+grid, whatever the agent count — and the ceiling above it is
+Amdahl's, not the kernel's.
 
 **Neither backend's curve is superlinear in agents.** PIBT is
 O(agents × timesteps) with a small constant, and the timestep count

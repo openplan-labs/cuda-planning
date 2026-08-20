@@ -94,12 +94,17 @@ are the rest. It crosses between 16 and 32 agents and then plateaus
 around 5–6×, because each thread's scan over the other agents grows
 as the agent count does.
 
-**The MAPF families barely move.** Both sit between 1× and 2.2×, and
-neither trends upward with agents. The
-[phase breakdown](phases.md) says why: 87–89% of CUDA wall time in
-prioritized planning is the per-agent space-time wavefront, and that
-loop is sequential in the priority order. The GPU deleted the oracle
-and made each search faster; Amdahl's law owns the rest. Escaping
+**The MAPF families barely move,** for two different reasons that
+both come down to Amdahl's law. In prioritized planning the
+[phase breakdown](phases.md) puts 87–89% of CUDA wall time in the
+per-agent space-time wavefront, a loop that is sequential in the
+priority order: the GPU deleted the oracle and made each individual
+search faster, and the priority order owns the rest. In PIBT the
+device does even less — it builds the distance oracle and nothing
+else, because the inheritance chains are recursive and
+data-dependent and run on the host in
+[both backends](../algorithms/pibt.md#parallelization). Both sit
+between 1× and 2.2×, and neither trends upward with agents. Escaping
 that needs a solver that plans agents concurrently, which is a
 [roadmap](../roadmap.md) item, not a tuning problem.
 

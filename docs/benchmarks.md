@@ -61,10 +61,11 @@ where it shows.
 | 64×64 | 64 | 0.586 s | 0.061 s | 0.026 s |
 | 64×64 | 128 | 1.263 s | 0.120 s | **0.052 s** |
 
-The GPU accelerates the distance oracle (one batched BFS instead of a
-Dijkstra per agent) and the per-step candidate ranking; the
-inheritance chains run on the host in both backends, so the gap
-narrows as chains dominate — visible in dense 32×32 instances.
+The GPU accelerates the distance oracle and nothing else: one batched
+BFS instead of a Dijkstra per agent, built once before the first
+timestep. The per-step candidate ranking and the inheritance chains
+are host NumPy in both backends, so the gap narrows as the step loop
+dominates the oracle — visible in dense 32×32 instances.
 
 ## Batched BFS distance maps
 
