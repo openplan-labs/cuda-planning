@@ -1,0 +1,124 @@
+/**
+ * Frontier — OpenPlan Labs brand tokens, applied to Material for MkDocs.
+ * Source of truth: openplan-labs/branding · tokens/tokens.css
+ *
+ * Light-first, three states of care per the branding contract:
+ *   :root                                   complete light palette
+ *   @media (prefers-color-scheme: dark)     dark, unless light is stamped
+ *   explicit dark selection                 wins either way
+ * Material stamps [data-md-color-scheme] once its JS runs; the media
+ * query covers first paint and no-JS readers.
+ */
+:root {
+  --color-bg: #f2f4f6;
+  --color-bg-raised: #ffffff;
+  --color-line: #d9dfe4;
+  --color-heading: #14181c;
+  --color-body: #3c464e;
+  --color-muted: #5e6a73;
+  --color-faint: #7b8790;
+  --color-path: #c2472c;
+  --color-path-soft: rgba(194, 71, 44, 0.08);
+  --color-frontier: #127a78;
+  --color-expanded: #6d8298;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-md-color-scheme="default"]):not([data-theme="light"]) {
+    --color-bg: #12171a;
+    --color-bg-raised: #1a2126;
+    --color-line: #2a343a;
+    --color-heading: #e8edf0;
+    --color-body: #aab6bd;
+    --color-muted: #7d8b93;
+    --color-faint: #59666e;
+    --color-path: #e87a5c;
+    --color-path-soft: rgba(232, 122, 92, 0.10);
+    --color-frontier: #3fb3ad;
+    --color-expanded: #8ba2b7;
+  }
+}
+
+:root[data-md-color-scheme="slate"],
+:root[data-theme="dark"] {
+  --color-bg: #12171a;
+  --color-bg-raised: #1a2126;
+  --color-line: #2a343a;
+  --color-heading: #e8edf0;
+  --color-body: #aab6bd;
+  --color-muted: #7d8b93;
+  --color-faint: #59666e;
+  --color-path: #e87a5c;
+  --color-path-soft: rgba(232, 122, 92, 0.10);
+  --color-frontier: #3fb3ad;
+  --color-expanded: #8ba2b7;
+}
+
+/* Map the tokens onto Material's own custom properties. */
+:root,
+:root[data-md-color-scheme="default"],
+:root[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--color-heading);
+  --md-accent-fg-color: var(--color-path);
+  --md-default-bg-color: var(--color-bg);
+  --md-default-fg-color: var(--color-body);
+  --md-default-fg-color--light: var(--color-muted);
+  --md-default-fg-color--lighter: var(--color-faint);
+  --md-default-fg-color--lightest: var(--color-line);
+  --md-typeset-color: var(--color-body);
+  --md-typeset-a-color: var(--color-path);
+  --md-code-bg-color: var(--color-bg-raised);
+  --md-footer-bg-color: var(--color-bg-raised);
+  --md-footer-fg-color: var(--color-body);
+  --md-footer-bg-color--dark: var(--color-bg-raised);
+  --md-footer-fg-color--light: var(--color-muted);
+}
+
+/* Header: raised paper with a hairline, not a colour block. */
+.md-header,
+.md-tabs {
+  background-color: var(--color-bg-raised);
+  color: var(--color-heading);
+  border-bottom: 1px solid var(--color-line);
+  box-shadow: none;
+}
+
+/* Prose is Charter, per the brand type roles; headings stay Libre
+   Franklin via Material's font setting. */
+.md-typeset {
+  font-family: "Charter", "XCharter", "Charis SIL", Georgia, serif;
+}
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5 {
+  font-family: "Libre Franklin", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+/* The accent budget: links and the single primary action only. */
+.md-typeset a {
+  color: var(--color-path);
+}
+.md-typeset a:hover {
+  color: var(--color-path);
+  text-decoration: underline;
+}
+
+/* Tables: hairline rules, tabular numerals for benchmark columns. */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--color-line);
+  font-variant-numeric: tabular-nums;
+}
+.md-typeset table:not([class]) th {
+  background-color: var(--color-bg-raised);
+  color: var(--color-heading);
+}
+
+/* Code blocks sit on raised paper. */
+.md-typeset code,
+.md-typeset pre > code {
+  background-color: var(--md-code-bg-color);
+}

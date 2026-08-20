@@ -33,7 +33,7 @@ class ReservationTable:
         grid: the occupancy grid the reservations refer to.
         horizon: last timestep (inclusive) the table covers. Searches
             against the table cannot return paths longer than this.
-        xp: array module — ``numpy`` (default) or ``cupy``. Solvers
+        xp (module): array module — ``numpy`` (default) or ``cupy``. Solvers
             running on the CUDA backend keep the table on the device so
             reserving a path never round-trips through host memory.
     """

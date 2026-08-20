@@ -155,7 +155,9 @@ def write_charts(results: list[BenchmarkResult], out_dir: Path) -> list[Path]:
                 color=_SERIES_COLORS.get(solver),
             )
         ax.set_yscale("log")
-        ax.set_xlabel("agents")
+        ax.set_xlabel(
+            "sources (one BFS per agent)" if family == "bfs" else "agents"
+        )
         ax.set_ylabel("median wall time (s, log scale)")
         grid_note = f" — {largest}x{largest} grid" if largest else ""
         ax.set_title(f"{family}{grid_note}")

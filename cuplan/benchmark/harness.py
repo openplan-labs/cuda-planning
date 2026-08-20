@@ -151,6 +151,59 @@ def _run_mapf_instance(
     return records
 
 
+def run_bfs_benchmark(
+    sizes: list[int],
+    batch_sizes: list[int],
+    seeds: list[int],
+    obstacle_density: float = 0.15,
+    include_cuda: bool | None = None,
+    progress: Callable[[str], None] | None = None,
+) -> list[BenchmarkResult]:
+    """Benchmark the batched distance-map primitive: CPU vs CUDA.
+
+    This is the primitive every solver consumes (heuristic tables, the
+    PIBT oracle), measured directly: one flood fill per source, batched.
+    pymapf has no batched equivalent — its per-goal Dijkstra cost is
+    included in the solver families' timings.
+    """
+    from ..bfs import distance_maps
+
+    include_cuda = cuda_available() if include_cuda is None else include_cuda
+    say = progress or (lambda s: None)
+    results: list[BenchmarkResult] = []
+    backends = ["cpu"] + (["cuda"] if include_cuda else [])
+
+    for size in sizes:
+        for batch in batch_sizes:
+            for seed in seeds:
+                scenario = random_scenario(
+                    size,
+                    min(batch, int(size * size * 0.2)),
+                    obstacle_density,
+                    seed,
+                )
+                goals = np.asarray(scenario.goals)
+                for backend in backends:
+                    say(f"bfs {size}x{size} batch {len(goals)} {backend}")
+                    if backend == "cuda":  # warm the NVRTC cache
+                        distance_maps(scenario.grid, goals[:1], backend="cuda")
+                    started = time.perf_counter()
+                    distance_maps(scenario.grid, goals, backend=backend)
+                    runtime = time.perf_counter() - started
+                    results.append(
+                        BenchmarkResult(
+                            family="bfs",
+                            solver=f"cuplan-{backend}",
+                            size=size,
+                            n_agents=len(goals),
+                            seed=seed,
+                            success=True,
+                            runtime=runtime,
+                        )
+                    )
+    return results
+
+
 def run_vo_benchmark(
     agent_counts: list[int],
     seeds: list[int],
