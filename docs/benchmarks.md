@@ -2,6 +2,17 @@
 
 Every number on this page was measured, and comes with its conditions.
 
+!!! info "The detailed study lives in Experiments"
+    This page is the quick overview from the primary matrix. The full
+    sweep — agents × grid × density scaling for every family, solution
+    quality against pymapf on identical instances, success-rate
+    heatmaps, CUDA phase breakdowns and the crossover analysis — is in
+    the Experiments section, with raw CSVs committed alongside. Start
+    at the [summary](experiments/summary.md) for the headline table
+    and the crossovers, or the
+    [methodology](experiments/methodology.md) for the conditions and
+    an accounting of the cells that sweep did not reach.
+
 **Machine** — NVIDIA RTX A2000 Laptop GPU (4 GB, driver 560.35.03,
 CUDA 12.6) and its host CPU (x86_64); Python 3.10, CuPy 14.2
 (`cupy-cuda12x`), NumPy under the CPU backend.
