@@ -1,6 +1,7 @@
 # Releasing
 
-`cuda-planning` publishes to PyPI from a tag, through
+This repository is `cuda-planning`; what it publishes to PyPI is **`cuplan`**,
+the same name you import. Releases run from a tag, through
 [`.github/workflows/release.yml`](.github/workflows/release.yml). The workflow
 authenticates with [Trusted Publishing][tp], so no API token is stored in the
 repository.
@@ -18,11 +19,16 @@ publisher — a trusted publisher declared before the project's first upload.
 
    | Field | Value |
    | :--- | :--- |
-   | PyPI project name | `cuda-planning` |
+   | PyPI project name | `cuplan` |
    | Owner | `openplan-labs` |
    | Repository name | `cuda-planning` |
    | Workflow name | `release.yml` |
    | Environment name | `pypi` |
+
+   The first two rows differ on purpose: the repository is `cuda-planning`,
+   the distribution is `cuplan`. PyPI matches the publisher against the name
+   in the package metadata, not the repository, and a mismatch fails the
+   upload with "Non-user identities cannot create new projects".
 
 3. Optionally repeat on [TestPyPI](https://test.pypi.org/manage/account/publishing/)
    with environment `testpypi`, which enables the rehearsal below.
@@ -56,7 +62,7 @@ version number can be spent freely.
      with the live one
 
      ```
-     [![PyPI](https://img.shields.io/pypi/v/cuda-planning?color=c2472c)](https://pypi.org/project/cuda-planning/)
+     [![PyPI](https://img.shields.io/pypi/v/cuplan?color=c2472c)](https://pypi.org/project/cuplan/)
      ```
 
    - Delete the "Not yet on PyPI — until then: `pip install git+…`" sentence
@@ -82,7 +88,7 @@ release with the distributions attached.
   artifact whose name lies about its contents; PyPI uploads cannot be replaced.
 - **Missing kernels** — the CUDA sources are compiled at runtime by NVRTC. A
   wheel without them installs fine and fails on the user's first GPU call.
-- **A broken CPU path** — `pip install cuda-planning` with no CuPy gives the
+- **A broken CPU path** — `pip install cuplan` with no CuPy gives the
   NumPy backend. The smoke test runs that exact path, on a runner with no GPU,
   because it is what most first-time users get.
 

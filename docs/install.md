@@ -3,7 +3,7 @@
 ## CPU only
 
 ```bash
-pip install cuda-planning
+pip install cuplan
 ```
 
 NumPy is the only dependency. Everything works — same algorithms, same
@@ -11,16 +11,16 @@ results — through the vectorized reference backend. This is also what
 runs in CI.
 
 !!! note
-    `cuda-planning` is the distribution name; the import name is
-    `cuplan`. The package is prepared for PyPI but not yet published —
-    until it is, install from source:
+    The distribution and the import are both `cuplan`; only the
+    repository is called `cuda-planning`. The package is prepared for
+    PyPI but not yet published — until it is, install from source:
     `pip install git+https://github.com/openplan-labs/cuda-planning`.
 
 ## With CUDA
 
 ```bash
-pip install 'cuda-planning[cuda12]'   # CUDA 12.x drivers
-pip install 'cuda-planning[cuda11]'   # CUDA 11.x drivers
+pip install 'cuplan[cuda12]'   # CUDA 12.x drivers
+pip install 'cuplan[cuda11]'   # CUDA 11.x drivers
 ```
 
 Requirements:

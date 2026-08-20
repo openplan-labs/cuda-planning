@@ -163,7 +163,7 @@ commands are committed under
 Reproduce with:
 
 ```bash
-pip install 'cuda-planning[cuda12,benchmark]'
+pip install 'cuplan[cuda12,benchmark]'
 python -m cuplan.benchmark.sweep --stage all --out benchmarks/experiments
 python -m cuplan.benchmark.figures
 ```

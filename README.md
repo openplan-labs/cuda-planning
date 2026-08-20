@@ -17,7 +17,7 @@ implementation behind one `backend="auto" | "cpu" | "cuda"` API, with
 CPU == CUDA equivalence enforced by tests. Kernels are CUDA C compiled
 at runtime through CuPy's NVRTC bindings, so a machine needs an NVIDIA
 driver but no CUDA toolkit — and without a GPU at all, `pip install
-cuda-planning` still gives the full library on the reference backend.
+cuplan` still gives the full library on the reference backend.
 The GPU wins by batching (one distance map per agent, one wavefront per
 timestep, one thread per velocity sample), not by forcing serial
 searches onto device threads; each algorithm's docs say exactly which
@@ -27,9 +27,9 @@ optimal search (CBS and friends) is on the roadmap, not in the box.
 ## Install
 
 ```bash
-pip install cuda-planning            # CPU reference backend (NumPy only)
-pip install 'cuda-planning[cuda12]'  # + CUDA, for CUDA 12.x drivers
-pip install 'cuda-planning[cuda11]'  # + CUDA, for CUDA 11.x drivers
+pip install cuplan            # CPU reference backend (NumPy only)
+pip install 'cuplan[cuda12]'  # + CUDA, for CUDA 12.x drivers
+pip install 'cuplan[cuda11]'  # + CUDA, for CUDA 11.x drivers
 ```
 
 Not yet on PyPI — until then:
@@ -123,7 +123,7 @@ Raw per-measurement CSVs are in
 [`benchmarks/experiments/`](benchmarks/experiments/). Reproduce with
 `python -m cuplan.benchmark.sweep` then
 `python -m cuplan.benchmark.figures` (add
-`pip install 'cuda-planning[benchmark]'` for the pymapf baselines and
+`pip install 'cuplan[benchmark]'` for the pymapf baselines and
 charts).
 
 ## Documentation

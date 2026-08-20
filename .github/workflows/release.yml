@@ -102,7 +102,7 @@ jobs:
 
       - name: Install from the built wheel and solve an instance
         # A GitHub runner has no GPU, so this exercises the CPU reference
-        # backend only — which is the path `pip install cuda-planning` gives
+        # backend only — which is the path `pip install cuplan` gives
         # a user without CuPy, and so the one a release must never break.
         run: |
           python -m pip install dist/*.whl
@@ -132,7 +132,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/project/cuda-planning/${{ needs.build.outputs.version }}
+      url: https://pypi.org/project/cuplan/${{ needs.build.outputs.version }}
     permissions:
       # Trusted Publishing: PyPI verifies this workflow's OIDC identity, so
       # the repository stores no API token at all.
@@ -152,7 +152,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: testpypi
-      url: https://test.pypi.org/project/cuda-planning/
+      url: https://test.pypi.org/project/cuplan/
     permissions:
       id-token: write
     steps:
@@ -196,8 +196,8 @@ jobs:
           )
           print((match.group(1).strip() if match else f"See CHANGELOG.md for {version}."))
           print()
-          print(f"Install: `pip install cuda-planning=={version}`")
-          print(f"With CUDA 12: `pip install 'cuda-planning[cuda12]=={version}'`")
+          print(f"Install: `pip install cuplan=={version}`")
+          print(f"With CUDA 12: `pip install 'cuplan[cuda12]=={version}'`")
           PY
 
       - uses: softprops/action-gh-release@v3

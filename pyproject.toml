@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "cuda-planning"
+name = "cuplan"
 description = "CUDA-accelerated multi-agent path finding and planning: batched BFS, space-time search, prioritized planning, PIBT, velocity obstacles, and flocking, with a NumPy reference backend"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -30,7 +30,7 @@ classifiers = [
     "Environment :: GPU :: NVIDIA CUDA",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
-# NumPy is the only hard dependency: `pip install cuda-planning` gives
+# NumPy is the only hard dependency: `pip install cuplan` gives
 # the fully tested CPU reference backend. CUDA is an extra because CuPy
 # wheels are driver-version specific.
 dependencies = ["numpy>=1.24"]

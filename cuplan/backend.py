@@ -1,6 +1,6 @@
 """Backend selection: NumPy reference or CUDA via CuPy.
 
-``pip install cuda-planning`` alone gives the CPU reference backend;
+``pip install cuplan`` alone gives the CPU reference backend;
 installing the ``[cuda12]`` or ``[cuda11]`` extra adds the CUDA one.
 CuPy needs only the NVIDIA driver at runtime — kernels are CUDA C
 compiled on first use through NVRTC, so no CUDA toolkit install is
@@ -61,7 +61,7 @@ def resolve_backend(backend: Backend = "auto") -> Literal["cpu", "cuda"]:
         if not cuda_available():
             raise CudaUnavailableError(
                 "backend='cuda' requested but no working CUDA device was "
-                "found. Install cuda-planning[cuda12] (or [cuda11]) and "
+                "found. Install cuplan[cuda12] (or [cuda11]) and "
                 "check `nvidia-smi`; use backend='auto' to fall back."
             )
         return "cuda"
@@ -74,7 +74,7 @@ def get_cupy():
         import cupy
     except ImportError as error:  # pragma: no cover - exercised without cupy
         raise CudaUnavailableError(
-            "CuPy is not installed. Install cuda-planning[cuda12] for "
-            "CUDA 12.x drivers or cuda-planning[cuda11] for CUDA 11.x."
+            "CuPy is not installed. Install cuplan[cuda12] for "
+            "CUDA 12.x drivers or cuplan[cuda11] for CUDA 11.x."
         ) from error
     return cupy
