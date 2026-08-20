@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question / discussion
+    url: https://github.com/openplan-labs/cuda-planning/discussions
+    about: Ask usage questions or discuss design here.

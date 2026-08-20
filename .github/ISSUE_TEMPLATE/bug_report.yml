@@ -1,0 +1,43 @@
+name: Bug report
+description: Something is wrong — a crash, a wrong plan, or CPU/CUDA disagreement
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: >
+        What you did, what you expected, what you got. For a planning
+        result, say which invariant is violated (invalid plan,
+        suboptimal path, CPU and CUDA backends disagree, ...).
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: >
+        Smallest script that shows the problem — ideally a fixed-seed
+        scenario so we can rerun the exact instance.
+      render: python
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: cuda-planning version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: >
+        Python version, backend used (cpu/cuda), and if CUDA: GPU
+        model, driver version (`nvidia-smi`), and CuPy version.
+      placeholder: |
+        Python 3.11, backend=cuda
+        RTX A2000, driver 560.35.03, cupy-cuda12x 14.2.0
+    validations:
+      required: true

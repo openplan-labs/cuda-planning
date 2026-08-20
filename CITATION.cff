@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use cuda-planning in your research, please cite it as below."
+title: "cuda-planning: CUDA-accelerated multi-agent path finding and planning"
+type: software
+authors:
+  - family-names: Lejeune
+    given-names: Erwin
+    email: erwin.lejeune15@gmail.com
+repository-code: "https://github.com/openplan-labs/cuda-planning"
+url: "https://openplan-labs.github.io/cuda-planning/"
+license: MIT
+version: 0.1.0
+date-released: "2026-08-20"
+keywords:
+  - CUDA
+  - GPU
+  - multi-agent path finding
+  - MAPF
+  - planning
+  - robotics

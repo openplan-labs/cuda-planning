@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cuda-planning"
+description = "CUDA-accelerated multi-agent path finding and planning: batched BFS, space-time search, prioritized planning, PIBT, velocity obstacles, and flocking, with a NumPy reference backend"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Erwin Lejeune", email = "erwin.lejeune15@gmail.com" }]
+keywords = [
+    "cuda",
+    "gpu",
+    "multi-agent",
+    "path-finding",
+    "mapf",
+    "planning",
+    "robotics",
+    "swarm",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Environment :: GPU :: NVIDIA CUDA",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# NumPy is the only hard dependency: `pip install cuda-planning` gives
+# the fully tested CPU reference backend. CUDA is an extra because CuPy
+# wheels are driver-version specific.
+dependencies = ["numpy>=1.24"]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+cuda12 = ["cupy-cuda12x>=12.0"]
+cuda11 = ["cupy-cuda11x>=12.0"]
+benchmark = ["pymapf>=0.5", "matplotlib>=3.7"]
+dev = ["pytest>=7.0", "ruff>=0.4", "matplotlib>=3.7", "pymapf>=0.5"]
+
+[project.urls]
+Homepage = "https://github.com/openplan-labs/cuda-planning"
+Documentation = "https://openplan-labs.github.io/cuda-planning/"
+Source = "https://github.com/openplan-labs/cuda-planning"
+Changelog = "https://github.com/openplan-labs/cuda-planning/blob/main/CHANGELOG.md"
+
+[tool.hatch.version]
+path = "cuplan/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["cuplan"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E731"]
