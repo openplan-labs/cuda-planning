@@ -78,32 +78,51 @@ results transfer between the two libraries unchanged.
 
 ## Benchmarks
 
-![Prioritized planning wall time vs agents, 64x64 grid: cuplan-cuda fastest, cuplan-cpu close, pymapf orders of magnitude slower](benchmarks/results/prioritized-scaling.png)
+![Prioritized planning wall time vs agents on a 64x64 grid at 5% obstacle density: cuplan CUDA fastest, cuplan CPU close behind, pymapf orders of magnitude slower and timing out at 256 agents](docs/assets/experiments/headline.png)
 
-Measured on an NVIDIA RTX A2000 Laptop GPU (4 GB, driver 560.35) and
-its host CPU; random grids at 15% obstacle density, identical seeded
-instances for every solver, medians over 3 seeds; wall time includes
-host/device transfers. Same-cost check: cuplan's CPU and CUDA backends
-return identical solutions.
+Measured on an NVIDIA RTX A2000 Laptop GPU (4 GB, driver 560.35.03 /
+CUDA 12.6) and its host Intel Core i7-11850H; CuPy 14.2.0, NumPy
+2.2.6, pymapf 0.8.0. Random grids from a fixed generator, the same
+seeded instance handed to every solver, medians over seeds {0, 1, 2},
+wall time for the whole `solve()` call with host/device transfers
+included.
 
-| Workload | pymapf | cuplan CPU | cuplan CUDA |
-| :-- | --: | --: | --: |
-| Prioritized planning, 64×64, 128 agents | 46.34 s | 0.64 s | **0.29 s** (159×) |
-| PIBT, 64×64, 128 agents | 1.26 s | 0.12 s | **0.05 s** (24×) |
-| Batched BFS, 512 maps on 256×256 | — | 26.37 s | **1.03 s** (26×) |
-| Velocity obstacles, 128 agents × 80 steps | — | 1.37 s | **0.44 s** (3.1×) |
-| Prioritized planning, 128×128, 256 agents | — | 4.53 s | **1.14 s** (4.0×) |
-| Batched BFS, 1024 maps on 256×256 | — | 54.25 s | **1.86 s** (29×) |
+| Workload | conditions | pymapf | cuplan CPU | cuplan CUDA |
+| :-- | :-- | --: | --: | --: |
+| Prioritized planning | 64×64 grid, 5% obstacles, 128 agents | 47.95 s | 0.590 s | **0.289 s** |
+| PIBT | 64×64 grid, 5% obstacles, 512 agents | 5.35 s | **0.541 s** | not measured¹ |
+| Batched BFS | 256×256 grid, 15% obstacles, 1024 distance maps | n/a² | 62.09 s | **1.87 s** |
+| Flocking (Boids) | 2048 agents, 200 steps | n/a³ | 92.16 s | **0.377 s** |
 
-The wins come from batch size, and small instances go the other way:
-at 16 agents the velocity-obstacle step is *faster on the CPU*
-(0.028 s vs 0.043 s — launch overhead dominates), and prioritized
-planning on 32×32 grids gains little. The crossover sits around a few
-dozen agents; below it, use `backend="cpu"`.
+¹ The sweep's GPU died partway through the MAPF stage; those cells are
+recorded as errors, not guessed at.
+² pymapf has no batched distance-map primitive.
+³ pymapf's simulators update agents sequentially within a timestep, so
+a wall-clock comparison would time a different problem.
 
-Full tables, conditions, and charts: [`benchmarks/results/`](benchmarks/results/)
-and the [benchmark docs](https://openplan-labs.github.io/cuda-planning/benchmarks/).
-Reproduce with `python -m cuplan.benchmark` (add
+Three things worth knowing before you reach for the GPU:
+
+- **Most of the win over pymapf is not CUDA.** That 47.95 s → 0.590 s
+  is the *CPU* backend — a batched distance oracle and a dense
+  reservation table. The device adds a further 2.0× on top.
+- **The GPU pays through batch size, and the rate varies 100-fold**:
+  245× for flocking at 2048 agents, 33× for 1024 distance maps on a
+  256² grid, 2.0× for prioritized planning. Small work goes the other
+  way — velocity obstacles at 8 agents are 0.56× on the GPU, i.e.
+  *slower*. Below a few dozen agents, pass `backend="cpu"`.
+- **No speedup was bought with a worse plan.** On all 105 MAPF
+  instances solved by both backends, CPU and CUDA return identical
+  sum of costs and makespan; against pymapf on 197 shared instances
+  the median sum-of-costs ratio is exactly 1.0000.
+
+Full study — scaling curves per grid and density, success-rate
+heatmaps, solution-quality parity, CUDA phase breakdowns, and an
+honest accounting of which cells the interrupted sweep did not reach:
+**[Experiments](https://openplan-labs.github.io/cuda-planning/experiments/summary/)**.
+Raw per-measurement CSVs are in
+[`benchmarks/experiments/`](benchmarks/experiments/). Reproduce with
+`python -m cuplan.benchmark.sweep` then
+`python -m cuplan.benchmark.figures` (add
 `pip install 'cuda-planning[benchmark]'` for the pymapf baselines and
 charts).
 
