@@ -187,10 +187,11 @@ diagonal, and it does not.
 
 The backend check is again exact: on all **52 of 52** shared
 instances, cuplan's CPU and CUDA backends return identical sum of
-costs and identical makespan. PIBT's inheritance chains run on the
-host in both backends — only the distance oracle and the per-step
-candidate ranking move to the device — so the two backends take the
-same decisions in the same order by construction.
+costs and identical makespan. That is guaranteed rather than
+observed: the only thing the backend switch moves is where the
+distance oracle is built, and the oracle is an exact integer
+distance table — the same integers either way. Every decision after
+it, ranking included, runs on the host from the same seeded RNG.
 
 ## What to take away
 
