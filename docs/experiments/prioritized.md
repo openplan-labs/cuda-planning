@@ -161,8 +161,13 @@ not bought with worse plans.
 The third panel is the stronger claim: on all **53 of 53** shared
 prioritized instances, cuplan's CPU and CUDA backends return the same
 sum of costs and the same makespan. Not close — equal. The backends
-move the same algorithm onto different hardware, and the test suite
-enforces it.
+move the same algorithm onto different hardware.
+
+Two aggregates agreeing is weaker than it sounds, though: many
+different plans share a sum of costs and a makespan, and until
+recently nothing compared the paths themselves. `tests/test_solvers.py`
+now does, for prioritized planning and PIBT — it skips without a
+device, so it constrains a GPU machine and says nothing here.
 
 ## What to take away
 

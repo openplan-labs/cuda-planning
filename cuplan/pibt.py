@@ -65,8 +65,10 @@ class PIBT:
         max_timestep: give up after this many timesteps. Defaults to a
             bound proportional to the map size and the agent count.
         seed: fixes tie-breaking, making a run reproducible.
-        backend: backend used for the batched distance oracle and the
-            per-step candidate evaluation.
+        backend: backend used for the batched distance oracle. The
+            per-step candidate ranking and the inheritance chains run on
+            the host in both backends, so this changes how the distance
+            maps are computed and nothing else.
     """
 
     name = "pibt"

@@ -6,6 +6,7 @@ import pytest
 from cuplan import PIBT, Grid, PrioritizedPlanning
 from cuplan.benchmark.scenarios import random_scenario
 from cuplan.problem import Agent, Problem
+from tests.conftest import needs_cuda
 
 
 def small_problem():
@@ -112,3 +113,48 @@ def test_agrees_with_pymapf_on_prioritized():
         first = int(dist[0][scenario.starts[0]])
         assert len(ours.paths["a0"]) - 1 == first
         assert len(theirs.paths["a0"]) - 1 == first
+
+
+# The experiments pages claim CPU and CUDA "return the same sum of costs and
+# the same makespan ... and the test suite enforces it". Until this test, it
+# did not: every solver test above pins backend="cpu", and the sweep compared
+# costs only. Paths were never compared by anything, so "identical solutions"
+# rested on two aggregates that many different plans share.
+#
+# These skip without a device, which is exactly when the claim needs checking
+# least -- but they run on any GPU machine and in a GPU CI job.
+@needs_cuda
+@pytest.mark.parametrize("seed", [0, 1, 2])
+def test_prioritized_cpu_and_cuda_return_the_same_paths(seed):
+    scenario = random_scenario(
+        height=16, width=16, n_agents=8, density=0.15, seed=seed
+    )
+    problem = scenario.to_cuplan()
+    cpu = PrioritizedPlanning(backend="cpu").solve(problem)
+    cuda = PrioritizedPlanning(backend="cuda").solve(problem)
+
+    assert (cpu is None) == (cuda is None)
+    if cpu is None:
+        return
+    assert cpu.is_valid() and cuda.is_valid()
+    assert cpu.sum_of_costs == cuda.sum_of_costs
+    assert cpu.makespan == cuda.makespan
+    # The claim the aggregates do not establish.
+    assert cpu.paths == cuda.paths
+
+
+@needs_cuda
+@pytest.mark.parametrize("seed", [0, 1, 2])
+def test_pibt_cpu_and_cuda_return_the_same_paths(seed):
+    scenario = random_scenario(
+        height=16, width=16, n_agents=8, density=0.15, seed=seed
+    )
+    problem = scenario.to_cuplan()
+    cpu = PIBT(seed=seed, backend="cpu").solve(problem)
+    cuda = PIBT(seed=seed, backend="cuda").solve(problem)
+
+    assert (cpu is None) == (cuda is None)
+    if cpu is None:
+        return
+    assert cpu.is_valid() and cuda.is_valid()
+    assert cpu.paths == cuda.paths

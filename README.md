@@ -14,7 +14,8 @@ CUDA-accelerated multi-agent path finding (MAPF) and planning — the GPU
 sibling of [pymapf](https://github.com/openplan-labs/pymapf). Every
 algorithm has a vectorized NumPy reference implementation and a CUDA
 implementation behind one `backend="auto" | "cpu" | "cuda"` API, with
-CPU == CUDA equivalence enforced by tests. Kernels are CUDA C compiled
+CPU == CUDA equivalence asserted by tests that run wherever there is a
+device to run them on. Kernels are CUDA C compiled
 at runtime through CuPy's NVRTC bindings, so a machine needs an NVIDIA
 driver but no CUDA toolkit — and without a GPU at all, `pip install
 cuplan` still gives the full library on the reference backend.
