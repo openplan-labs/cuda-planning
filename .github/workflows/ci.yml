@@ -5,6 +5,11 @@ on:
     branches: [main]
   pull_request:
 
+# Nothing here writes to the repository. Said explicitly so it stays true
+# even if the repository default is loosened again.
+permissions:
+  contents: read
+
 jobs:
   lint:
     runs-on: ubuntu-latest
